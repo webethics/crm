@@ -149,7 +149,7 @@ const Sidebar = () => {
                   <ListItem disablePadding>
                      <Typography variant="h6" component="div" sx={{ px: { xs: 1, lg: 2 }, pb: 2, pt: 5, width: "100%", textAlign: { xs: "center", lg: "left" } }}>
                         <ManageAccountsIcon fontSize="small" sx={{ color: 'sidebar.label', display: { xs: 'inline-block', lg: 'none' } }} />
-                        <Typography variant="h6" component="div" sx={{ textTransform: "uppercase", fontSize: "10px", color: "sidebar.label", letterSpacing: 1 }} display={{ xs: "none", lg: "block" }}>Project Management</Typography>
+                        <Typography variant="h6" component="div" sx={{ textTransform: "uppercase", fontSize: "10px", color: "sidebar.label", letterSpacing: 1 }} display={{ xs: "none", lg: "block" }}>HR Management</Typography>
                      </Typography>
                      {/* <Typography variant="h6" component="div" sx={{ textTransform: "uppercase", fontSize: "10px", color: "sidebar.label", px: 2, pb: 2, pt: 5, width: "100%", letterSpacing: 1 }}>HR Management</Typography> */}
                   </ListItem>
