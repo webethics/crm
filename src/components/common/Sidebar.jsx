@@ -30,7 +30,7 @@ import ExpandMore from '@mui/icons-material/ExpandMore';
 
 const Sidebar = () => {
    const [selectedIndex, setSelectedIndex] = useState(0);
-   const [isDrawerOpen, setIsDrawerOpen] = useState(true);
+   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
    const [openProfile, setOpenProfile] = useState(false);
    const [openTooltip, setOpenTooltip] = useState(false);
 

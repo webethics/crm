@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+  background-color: #acaeb4;
+}
 /* Sidebar Selected Menu Item */
 /* .MuiList-root .MuiListItem-root .MuiButtonBase-root:hover, */
 .MuiList-root .MuiListItem-root .MuiButtonBase-root.Mui-selected {
@@ -23,7 +27,8 @@
 .MuiList-root .MuiListItem-root .MuiButtonBase-root:hover .MuiSvgIcon-root {
   color:rgb(21, 121, 161);
 }
-.MuiList-root .MuiListItem-root .MuiButtonBase-root .MuiBadge-root span {
+/* Background color for all the badge */
+.MuiBadge-root .MuiBadge-badge {
   background-color:rgba(75, 189, 235, 0.25);
   color: #1579A1;
   line-height: 24px;
@@ -33,8 +38,8 @@
 .MuiSwitch-root .MuiSwitch-track {background: #acaeb4;}
 .MuiSwitch-root .MuiButtonBase-root.Mui-checked .MuiSwitch-thumb,
 .MuiSwitch-root .MuiButtonBase-root.Mui-checked ~ .MuiSwitch-track {background: rgb(21, 121, 161);}
-
 .MuiDrawer-root.dropdown-open .MuiPaper-root {overflow:visible;}
+
 @media screen and (max-width: 1199px) {
   .MuiList-root .MuiCollapse-root:after {
     bottom: 10px;

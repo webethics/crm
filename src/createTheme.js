@@ -30,6 +30,8 @@ const theme = createTheme(
       palette: {
          primary: {
             main: '#1eade6',
+            dark: '#1579a1',
+            light: '#c9ebf9'
          },
          sidebar: {
             label: '#acaeb4',
