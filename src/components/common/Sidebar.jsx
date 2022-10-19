@@ -207,14 +207,14 @@ const Sidebar = () => {
 
                <List component="nav" sx={{ pt: 2, pb: "5px", marginTop: 'auto', width: "calc(100% + 32px)", marginLeft: "-16px", position: 'sticky', bottom: 0, zIndex: 9, background: 'white' }}>
                   {/* , boxShadow: (theme) => theme.shadows.sidebar */}
-                  <ListItem disablePadding sx={{ marginTop: 'auto' }}>
+                  <ListItem disablePadding sx={{ marginTop: 'auto', px: 2 }}>
                      <ListItemButton onClick={handleClick} sx={{ justifyContent: "center" }}>
-                        <ListItemAvatar sx={{ minWidth: { xs: 'initial', lg: '56px' } }}>
-                           <Avatar alt="Remy Sharp" src={Owner} variant="rounded" sx={{ width: { xs: "25px", lg: "40px" }, height: { xs: "25px", lg: "40px" } }} />
+                        <ListItemAvatar sx={{ minWidth: { xs: 'initial', lg: '40px' } }}>
+                           <Avatar alt="Remy Sharp" src={Owner} variant="rounded" sx={{ width: { xs: "25px", lg: "35px" }, height: { xs: "25px", lg: "35px" } }} />
                         </ListItemAvatar>
                         <ListItemText
-                           primary={<Typography component="div" sx={{ color: 'primary.main', fontWeight: '500' }}>Harsh Vardhan</Typography>}
-                           secondary={<Typography component="div" sx={{ color: 'sidebar.iconText' }}>Owner</Typography>}
+                           primary={<Typography component="div" sx={{ color: 'primary.main', fontWeight: '500', lineHeight: 1.25, fontSize: '13px' }}>Satwinder Singh</Typography>}
+                           secondary={<Typography component="div" sx={{ color: 'sidebar.iconText', lineHeight: 1, fontSize: '12px' }}>Owner</Typography>}
                            sx={{ m: 0, display: { xs: "none", lg: "block" } }} />
                         {openProfile ? <ExpandLess sx={{ color: 'sidebar.iconText' }} /> : <ExpandMore sx={{ color: 'sidebar.iconText' }} />}
                      </ListItemButton>
@@ -232,8 +232,8 @@ const Sidebar = () => {
                      </List>
                   </Collapse>
 
-                  <ListItem disablePadding sx={{ marginTop: 'auto' }}>
-                     <ListItemButton component="a" href="#settings" sx={{ borderRadius: "3px", justifyContent: 'center' }} onClick={() => handleListItemClick(15)}>
+                  <ListItem disablePadding sx={{ marginTop: 'auto', px: 2 }}>
+                     <ListItemButton component="a" href="#settings" sx={{ borderRadius: "3px", justifyContent: 'center', px: 2 }} onClick={() => handleListItemClick(15)}>
                         <ListItemIcon sx={{ minWidth: { xs: "initial", lg: "30px" } }}>
                            <Tooltip title="Settings" placement="right" arrow>
                               <SettingsIcon fontSize="small" sx={{ color: 'sidebar.iconText' }} />
@@ -243,7 +243,7 @@ const Sidebar = () => {
                      </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding sx={{ marginTop: 'auto', px: 2 }}>
-                     <ListItemButton component="a" href="#logout" sx={{ borderRadius: "3px", px: 0, flexDirection: { xs: 'column', lg: 'row' } }} onClick={() => handleListItemClick(16)} className="">
+                     <ListItemButton component="a" href="#logout" sx={{ borderRadius: "3px", flexDirection: { xs: 'column', lg: 'row' } }} onClick={() => handleListItemClick(16)} className="">
                         <ListItemIcon sx={{ minWidth: { xs: "initial", lg: "30px" } }}>
                            <Tooltip title="Logout" placement="right" arrow>
                               <ExitToAppIcon fontSize="small" sx={{ color: 'sidebar.iconText' }} />
