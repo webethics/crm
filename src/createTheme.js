@@ -36,9 +36,9 @@ const theme = createTheme(
             iconText: '#7a7e9e',
          },
       },
-      // shadows: {
-      //    sidebar: '0px 5px 10px 1px #acaeb4',
-      // },
+      shadows: {
+         sidebars: '0px 5px 10px 1px #acaeb4',
+      },
       components: {
          // Disable Ripple Effect
          MuiButtonBase: {

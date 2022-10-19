@@ -205,8 +205,7 @@ const Sidebar = () => {
                   </ListItem>
                </List>
 
-               <List component="nav" sx={{ pt: 2, pb: "5px", marginTop: 'auto', width: "calc(100% + 32px)", marginLeft: "-16px", position: 'sticky', bottom: 0, zIndex: 9, background: 'white' }}>
-                  {/* , boxShadow: (theme) => theme.shadows.sidebar */}
+               <List component="nav" sx={{ pt: 2, pb: "5px", marginTop: 'auto', width: "calc(100% + 32px)", marginLeft: "-16px", position: 'sticky', bottom: 0, zIndex: 9, background: 'white', boxShadow: (theme) => theme.shadows.sidebars }}>
                   <ListItem disablePadding sx={{ marginTop: 'auto', px: 2 }}>
                      <ListItemButton onClick={handleClick} sx={{ justifyContent: "center" }}>
                         <ListItemAvatar sx={{ minWidth: { xs: 'initial', lg: '40px' } }}>
