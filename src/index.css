@@ -1,0 +1,51 @@
+/* Sidebar Selected Menu Item */
+/* .MuiList-root .MuiListItem-root .MuiButtonBase-root:hover, */
+.MuiList-root .MuiListItem-root .MuiButtonBase-root.Mui-selected {
+  background: rgba(75, 189, 235, 0.25);
+}
+.MuiList-root .MuiCollapse-root:after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #7a7e9e;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0px;
+  height: 0px;  
+}
+/* .MuiList-root .MuiCollapse-root .MuiButtonBase-root:hover .MuiListItemText-root span, */
+.MuiList-root .MuiListItem-root .MuiButtonBase-root:hover .MuiListItemText-root span,
+/* .MuiList-root .MuiCollapse-root .MuiButtonBase-root:hover .MuiSvgIcon-root, */
+.MuiList-root .MuiListItem-root .MuiButtonBase-root:hover .MuiSvgIcon-root {
+  color:rgb(21, 121, 161);
+}
+.MuiList-root .MuiListItem-root .MuiButtonBase-root .MuiBadge-root span {
+  background-color:rgba(75, 189, 235, 0.25);
+  color: #1579A1;
+  line-height: 24px;
+  display: block;
+}
+.MuiSwitch-root .MuiSwitch-thumb {background: #7a7e9e;}
+.MuiSwitch-root .MuiSwitch-track {background: #acaeb4;}
+.MuiSwitch-root .MuiButtonBase-root.Mui-checked .MuiSwitch-thumb,
+.MuiSwitch-root .MuiButtonBase-root.Mui-checked ~ .MuiSwitch-track {background: rgb(21, 121, 161);}
+
+/* @media screen and (max-width: 1200px) {
+  .sidebar-menus ~ .MuiList-root > .MuiListItem-root .MuiButtonBase-root {
+    flex-direction: column;
+  }
+} */
+.MuiDrawer-root.dropdown-open .MuiPaper-root {overflow:visible;}
+@media screen and (max-width: 1199px) {
+  .MuiList-root .MuiCollapse-root:after {
+    bottom: 10px;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid #7a7e9e;
+    border-top: 8px solid transparent;
+    left: -16px;
+    right: initial;
+  }
+}
