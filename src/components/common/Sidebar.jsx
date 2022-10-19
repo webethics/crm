@@ -61,7 +61,7 @@ const Sidebar = () => {
          </IconButton>
 
          <Drawer anchor="left" open={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} className={openProfile ? 'dropdown-opens' : ''}>
-            <Box px={2} width={{ xs: "76px", lg: "225px" }} role="presentation" display="flex" flexWrap="wrap" flexDirection="column" sx={{ flex: 1, boxSizing: "border-box" }}>
+            <Box px={2} width={{ xs: "76px", lg: "225px", maxWidth: "100%" }} role="presentation" display="flex" flexWrap="wrap" flexDirection="column" sx={{ flex: 1, boxSizing: "border-box" }}>
                {/* Sidebar Logo */}
                <Avatar alt="Remy Sharp" src={Logo} variant="rounded" sx={{ pt: 2, pb: 1, width: "100%", display: { xs: "none", lg: "flex" }, height: 'auto', position: 'sticky', top: 0, zIndex: 9, background: 'white' }} />
                <Avatar alt="Remy Sharp" src={LogoIcon} variant="rounded" sx={{ pt: 2, pb: 1, width: { xs: "42px", lg: "100%" }, display: { xs: "block", lg: "none" }, height: 'auto', position: 'sticky', top: 0, zIndex: 9, background: 'white' }} />
