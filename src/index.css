@@ -40,7 +40,7 @@ body {
 .MuiSwitch-root .MuiButtonBase-root.Mui-checked ~ .MuiSwitch-track {background: rgb(21, 121, 161);}
 .MuiDrawer-root.dropdown-open .MuiPaper-root {overflow:visible;}
 
-@media screen and (max-width: 1199px) {
+/* @media screen and (max-width: 1199px) {
   .MuiList-root .MuiCollapse-root:after {
     bottom: 10px;
     border-bottom: 8px solid transparent;
@@ -49,4 +49,4 @@ body {
     left: -16px;
     right: initial;
   }
-}
+} */
