@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-color: #acaeb4;
+  background-color: #e0e0e0;
 }
 /* Sidebar Selected Menu Item */
 /* .MuiList-root .MuiListItem-root .MuiButtonBase-root:hover, */
@@ -40,6 +40,15 @@ body {
 .MuiSwitch-root .MuiButtonBase-root.Mui-checked ~ .MuiSwitch-track {background: rgb(21, 121, 161);}
 .MuiDrawer-root.dropdown-open .MuiPaper-root {overflow:visible;}
 
+
+.MuiTabs-root .MuiTabs-scroller .MuiTab-root.Mui-selected {color:#ffffff;}
+.MuiTabs-root .MuiTabs-scroller .MuiTabs-indicator {background-color:#ffffff;}
+.MuiTabs-root .MuiTabs-scrollButtons {
+  color:#ffffff;
+}
+.MuiTabs-root .MuiTabs-scrollButtons.Mui-disabled {
+  opacity: 0.3;
+}
 /* @media screen and (max-width: 1199px) {
   .MuiList-root .MuiCollapse-root:after {
     bottom: 10px;

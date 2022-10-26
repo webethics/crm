@@ -16,7 +16,7 @@ const BottomMenus = () => {
    };
 
    return (
-      <Stack sx={{ bottom: 0, position: "fixed", left: 0, right: 0, backgroundColor: "#ffffff" }}>
+      <Stack sx={{ bottom: 0, position: "fixed", left: 0, right: 0, backgroundColor: "#ffffff", display: { lg: "none" } }}>
          <BottomNavigation value={value} onChange={handleChange} sx={{ maxWidth: '320px', width: '100%', margin: 'auto', }}>
 
             <BottomNavigationAction

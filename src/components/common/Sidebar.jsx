@@ -14,14 +14,9 @@ import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import PendingActionsIcon from '@mui/icons-material/PendingActions';
 import HelpCenterIcon from '@mui/icons-material/HelpCenter';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
-import EqualizerIcon from '@mui/icons-material/Equalizer';
-import DescriptionIcon from '@mui/icons-material/Description';
-import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
-import CampaignIcon from '@mui/icons-material/Campaign';
 import EditIcon from '@mui/icons-material/Edit';
 
 import Logo from '../../assets/images/logo.svg';
-import LogoIcon from '../../assets/images/logo-icon.svg';
 import Owner from '../../assets/images/owner.png';
 
 import Collapse from '@mui/material/Collapse';
@@ -30,7 +25,7 @@ import ExpandMore from '@mui/icons-material/ExpandMore';
 
 const Sidebar = () => {
    const [selectedIndex, setSelectedIndex] = useState(0);
-   const [isDrawerOpen, setIsDrawerOpen] = useState(true);
+   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
    const [openProfile, setOpenProfile] = useState(false);
 
    const handleListItemClick = (index) => {
@@ -44,15 +39,14 @@ const Sidebar = () => {
    return (
       <>
          {/* Sidebar Toggle Icon */}
-         <IconButton size="large" edge="start" color="inherit" aria-label="logo" onClick={() => setIsDrawerOpen(true)}>
+         {/* <IconButton size="large" edge="start" color="inherit" aria-label="logo" onClick={() => setIsDrawerOpen(true)}>
             <MenuIcon />
-         </IconButton>
+         </IconButton> */}
 
-         <Drawer anchor="left" open={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} className={openProfile ? 'dropdown-opens' : ''}>
+         <Drawer hideBackdrop variant="permanent" anchor="left" open={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} sx={{ display: { xs: "none", lg: "flex" } }}>
             <Box px={2} sx={{ width: "225px", maxWidth: "100%", minWidth: "225px", flex: 1, boxSizing: "border-box" }} role="presentation" display="flex" flexWrap="wrap" flexDirection="column">
                {/* Sidebar Logo */}
                <Avatar alt="Remy Sharp" src={Logo} variant="rounded" sx={{ pt: 2, pb: 1, width: "100%", display: "flex", height: 'auto', position: 'sticky', top: 0, zIndex: 9, background: 'white' }} />
-               {/* <Avatar alt="Remy Sharp" src={LogoIcon} variant="rounded" sx={{ pt: 2, pb: 1, width: { xs: "42px", lg: "100%" }, display: { xs: "block", lg: "none" }, height: 'auto', position: 'sticky', top: 0, zIndex: 9, background: 'white' }} /> */}
 
                {/* Sidebar Menus */}
                {/* Analytics */}
@@ -88,7 +82,6 @@ const Sidebar = () => {
                      <Typography variant="h6" component="div" sx={{ px: 2, pb: 2, pt: 5, width: "100%" }}>
                         <Typography variant="h6" component="div" sx={{ textTransform: "uppercase", fontSize: "10px", color: "sidebar.label", letterSpacing: 1 }}>Project Management</Typography>
                      </Typography>
-                     {/* <Typography variant="h6" component="div" sx={{ textTransform: "uppercase", fontSize: "10px", color: "sidebar.label", px: 2, pb: 2, pt: 5, width: "100%", letterSpacing: 1 }}>Project Management</Typography> */}
                   </ListItem>
                   <ListItem disablePadding>
                      <ListItemButton component="a" href="#projects" sx={{ borderRadius: "3px" }} selected={selectedIndex === 7} onClick={() => handleListItemClick(7)}>
@@ -136,7 +129,6 @@ const Sidebar = () => {
                      <Typography variant="h6" component="div" sx={{ px: 2, pb: 2, pt: 5, width: "100%" }}>
                         <Typography variant="h6" component="div" sx={{ textTransform: "uppercase", fontSize: "10px", color: "sidebar.label", letterSpacing: 1 }}>HR Management</Typography>
                      </Typography>
-                     {/* <Typography variant="h6" component="div" sx={{ textTransform: "uppercase", fontSize: "10px", color: "sidebar.label", px: 2, pb: 2, pt: 5, width: "100%", letterSpacing: 1 }}>HR Management</Typography> */}
                   </ListItem>
                   <ListItem disablePadding>
                      <ListItemButton component="a" href="#interviews" sx={{ borderRadius: "3px" }} selected={selectedIndex === 11} onClick={() => handleListItemClick(11)}>
@@ -175,7 +167,6 @@ const Sidebar = () => {
                      <Typography variant="h6" component="div" sx={{ px: 2, pb: 2, pt: 5, width: "100%" }}>
                         <Typography variant="h6" component="div" sx={{ textTransform: "uppercase", fontSize: "10px", color: "sidebar.label", letterSpacing: 1 }}>Marketing</Typography>
                      </Typography>
-                     {/* <Typography variant="h6" component="div" sx={{ textTransform: "uppercase", fontSize: "10px", color: "sidebar.label", px: 2, pb: 2, pt: 5, width: "100%", letterSpacing: 1 }}>Marketing</Typography> */}
                   </ListItem>
                   <ListItem disablePadding>
                      <ListItemButton component="a" href="#sales" sx={{ borderRadius: "3px" }} selected={selectedIndex === 14} onClick={() => handleListItemClick(14)}>
@@ -189,14 +180,14 @@ const Sidebar = () => {
                   </ListItem>
                </List>
 
-               <List component="nav" sx={{ pt: 2, pb: "5px", marginTop: 'auto', width: "calc(100% + 32px)", marginLeft: "-16px", position: 'sticky', bottom: 0, zIndex: 9, background: 'white', boxShadow: (theme) => theme.shadows.sidebars }}>
+               <List component="nav" sx={{ pt: 2, pb: "5px", marginTop: 'auto', width: "calc(100% + 32px)", marginLeft: "-16px", position: 'sticky', bottom: 0, zIndex: 9, background: 'white', boxShadow: '0px 5px 10px 1px #acaeb4' }}>
                   <ListItem disablePadding sx={{ marginTop: 'auto', px: 2 }}>
                      <ListItemButton onClick={handleClick} sx={{ justifyContent: "center" }}>
                         <ListItemAvatar sx={{ minWidth: '40px' }}>
                            <Avatar alt="Remy Sharp" src={Owner} variant="rounded" sx={{ width: "35px", height: "35px" }} />
                         </ListItemAvatar>
                         <ListItemText
-                           primary={<Typography component="div" sx={{ color: 'primary.main', fontWeight: '500', lineHeight: 1.25, fontSize: '13px' }}>Satwinder Singh</Typography>}
+                           primary={<Typography component="div" sx={{ color: 'primary.main', fontWeight: '500', lineHeight: 1.25, fontSize: '13px' }}>Harsh Vardhan</Typography>}
                            secondary={<Typography component="div" sx={{ color: 'sidebar.iconText', lineHeight: 1, fontSize: '12px' }}>Owner</Typography>}
                            sx={{ m: 0 }} />
                         {openProfile ? <ExpandLess sx={{ color: 'sidebar.iconText' }} /> : <ExpandMore sx={{ color: 'sidebar.iconText' }} />}
@@ -240,7 +231,6 @@ const Sidebar = () => {
                      </ListItemButton>
                   </ListItem>
                </List>
-
 
             </Box>
          </Drawer>

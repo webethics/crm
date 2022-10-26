@@ -1,13 +1,13 @@
 import React from 'react';
-import BottomMenus from '../common/BottomMenus';
-import Sidebar from '../common/Sidebar';
+// import BottomMenus from '../common/BottomMenus';
+// import Sidebar from '../common/Sidebar';
 
 const index = ({ children }) => {
    return (
       <>
-         <Sidebar />
+         {/* <Sidebar /> */}
          {children}
-         <BottomMenus />
+         {/* <BottomMenus /> */}
       </>
    )
 }
