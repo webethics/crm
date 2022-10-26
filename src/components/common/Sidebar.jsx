@@ -180,7 +180,8 @@ const Sidebar = () => {
                   </ListItem>
                </List>
 
-               <List component="nav" sx={{ pt: 2, pb: "5px", marginTop: 'auto', width: "calc(100% + 32px)", marginLeft: "-16px", position: 'sticky', bottom: 0, zIndex: 9, background: 'white', boxShadow: '0px 5px 10px 1px #acaeb4' }}>
+               <List component="nav" sx={{ pt: 2, pb: "5px", marginTop: 'auto', width: "calc(100% + 32px)", marginLeft: "-16px", position: 'sticky', bottom: 0, zIndex: 9, background: 'white', borderTop: '1px solid rgba(0, 0, 0, 0.12)' }}>
+                  {/* boxShadow: '0px 5px 10px 1px #acaeb4', */}
                   <ListItem disablePadding sx={{ marginTop: 'auto', px: 2 }}>
                      <ListItemButton onClick={handleClick} sx={{ justifyContent: "center" }}>
                         <ListItemAvatar sx={{ minWidth: '40px' }}>
