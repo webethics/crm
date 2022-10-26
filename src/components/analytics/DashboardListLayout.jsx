@@ -15,10 +15,10 @@ const DashboardListLayout = ({ data }) => {
                            {item.icon}
                         </Box>
                         <Box component="div" sx={{ display: 'inline-block', boxSizing: 'border-box', pr: 3, width: { xl: '100%' } }}>
-                           <Typography component="div" sx={{ fontWeight: 'bold', color: item.label === 'total' ? 'common.white' : item.label === 'hired' ? 'common.white' : 'primary.dark', fontFamily: "'Roboto',sans-serif" }}>{item.value}</Typography>
-                           <Typography component="div" sx={{ color: item.label === 'total' ? 'primary.light' : item.label === 'hired' ? 'common.white' : 'sidebar.label', lineHeight: 1, fontSize: '13px', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>{item.name}</Typography>
+                           <Typography component="div" sx={{ fontWeight: 'bold', color: item.label === 'total' ? 'common.white' : item.label === 'hired' ? 'common.white' : 'primary.dark', fontFamily: "'Roboto',sans-serif", fontSize: { xs: '15px', lg: '14px' } }}>{item.value}</Typography>
+                           <Typography component="div" sx={{ color: item.label === 'total' ? 'primary.light' : item.label === 'hired' ? 'common.white' : 'sidebar.label', lineHeight: 1, fontSize: { xs: '14px', lg: '13px' }, textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>{item.name}</Typography>
                         </Box>
-                        <Typography component="div" sx={{ position: 'absolute', top: 0, right: 0, lineHeight: 1, color: item.label === 'total' ? 'primary.light' : item.label === 'hired' ? 'common.white' : 'sidebar.label', fontSize: '13px' }}>October</Typography>
+                        <Typography component="div" sx={{ position: 'absolute', top: 0, right: 0, lineHeight: 1, color: item.label === 'total' ? 'primary.light' : item.label === 'hired' ? 'common.white' : 'sidebar.label', fontSize: { xs: '14px', lg: '13px' } }}>October</Typography>
                         <VisibilityIcon sx={{ position: 'absolute', bottom: 0, right: 0, fontSize: 16, color: item.label === 'total' ? 'primary.light' : item.label === 'hired' ? 'common.white' : 'sidebar.label' }} />
                      </Grid>
                   </Grid>
@@ -33,10 +33,10 @@ const DashboardListLayout = ({ data }) => {
                            {item.icon}
                         </Box>
                         <Box component="div" sx={{ display: 'inline-block', boxSizing: 'border-box', pr: 3, width: { xl: '100%' } }}>
-                           <Typography component="div" sx={{ fontWeight: 'bold', color: item.label === 'total' ? 'common.white' : item.label === 'hired' ? 'common.white' : 'primary.dark', fontFamily: "'Roboto',sans-serif" }}>{item.value}</Typography>
-                           <Typography component="div" sx={{ color: item.label === 'total' ? 'primary.light' : item.label === 'hired' ? 'common.white' : 'sidebar.label', lineHeight: 1, fontSize: '13px', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>{item.name}</Typography>
+                           <Typography component="div" sx={{ fontWeight: 'bold', color: item.label === 'total' ? 'common.white' : item.label === 'hired' ? 'common.white' : 'primary.dark', fontFamily: "'Roboto',sans-serif", fontSize: { xs: '15px', lg: '14px' } }}>{item.value}</Typography>
+                           <Typography component="div" sx={{ color: item.label === 'total' ? 'primary.light' : item.label === 'hired' ? 'common.white' : 'sidebar.label', lineHeight: 1, fontSize: { xs: '14px', lg: '13px' }, textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>{item.name}</Typography>
                         </Box>
-                        <Typography component="div" sx={{ position: 'absolute', top: 0, right: 0, lineHeight: 1, color: item.label === 'total' ? 'primary.light' : item.label === 'hired' ? 'common.white' : 'sidebar.label', fontSize: '13px' }}>October</Typography>
+                        <Typography component="div" sx={{ position: 'absolute', top: 0, right: 0, lineHeight: 1, color: item.label === 'total' ? 'primary.light' : item.label === 'hired' ? 'common.white' : 'sidebar.label', fontSize: { xs: '14px', lg: '13px' } }}>October</Typography>
                         <VisibilityIcon sx={{ position: 'absolute', bottom: 0, right: 0, fontSize: 16, color: item.label === 'total' ? 'primary.light' : item.label === 'hired' ? 'common.white' : 'sidebar.label' }} />
                      </Grid>
                   </Grid>
