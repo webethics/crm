@@ -41,6 +41,7 @@ body {
 .MuiDrawer-root.dropdown-open .MuiPaper-root {overflow:visible;}
 
 
+/* .MuiTabs-root .MuiTabs-scroller .MuiTabs-flexContainer {justify-content: center;} */
 .MuiTabs-root .MuiTabs-scroller .MuiTab-root.Mui-selected {color:#ffffff;}
 .MuiTabs-root .MuiTabs-scroller .MuiTabs-indicator {background-color:#ffffff;}
 .MuiTabs-root .MuiTabs-scrollButtons {

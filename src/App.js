@@ -28,7 +28,7 @@ import Header from './components/common/Header';
 function App() {
   return (
     <ThemeProvider theme={createTheme}>
-      <Box component="div" className="App" sx={{ boxSizing: 'border-box', pt: "120px", pl: { xs: '0', lg: '240px!important' }, pb: { xs: '115px', lg: 0 }, }}>
+      <Box component="div" className="App" sx={{ boxSizing: 'border-box', pt: "120px", pl: { xs: '0', lg: '240px!important' }, pb: { xs: '100px', lg: 0 }, }}>
         <Header />
         <Sidebar />
         <Layout />

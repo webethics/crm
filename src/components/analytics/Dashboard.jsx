@@ -54,10 +54,10 @@ const Dashboard = () => {
    ];
    let layout = '';
    return (
-      <Container sx={{ maxWidth: { xs: 'initial' }, pt: { xs: '50px', lg: 0 } }}>
+      <Container sx={{ maxWidth: { xs: 'initial' }, pt: { xs: '25px', lg: 0 }, px: 0 }}>
          <TabContext value={value}>
             <Box sx={{ width: '100%', bgcolor: 'primary.dark', position: 'fixed', top: '70px', left: 0, right: 0, zIndex: 9, display: { lg: 'none' } }}>
-               <TabList variant="scrollable" scrollButtons allowScrollButtonsMobile onChange={handleChange} aria-label="lab API tabs example" sx={{ maxWidth: { xs: 320, sm: 480 }, margin: 'auto' }}>
+               <TabList variant="scrollable" scrollButtons allowScrollButtonsMobile onChange={handleChange} aria-label="lab API tabs example" sx={{ px: 2 }}>
                   <Tab label="Project Management" value='1' sx={{ color: 'common.white', textTransform: 'capitalize', fontWeight: '400' }} />
                   <Tab label="HR Management" value='2' sx={{ color: 'common.white', textTransform: 'capitalize', fontWeight: '400' }} />
                   <Tab label="Marketing" value='3' sx={{ color: 'common.white', textTransform: 'capitalize', fontWeight: '400' }} />
