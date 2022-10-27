@@ -21,7 +21,7 @@ body {
   width: 0px;
   height: 0px;  
 }
-.MuiList-root .MuiListItem-root .MuiButtonBase-root:hover {
+.MuiList-root .MuiListItem-root .MuiButtonBase-root:not(.Mui-selected):hover {
   background: transparent;
 }
 .MuiList-root .MuiListItem-root .MuiButtonBase-root:hover .MuiListItemText-root span,

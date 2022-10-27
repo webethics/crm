@@ -1,5 +1,4 @@
 import { createTheme } from '@mui/material';
-import blue from '@mui/material/colors/blue';
 const theme = createTheme(
    {
       breakpoints: {
@@ -71,6 +70,10 @@ const theme = createTheme(
             300: '#7986cb',
             400: '#5c6bc0'
          },
+         amber: {
+            300: '#ffd54f',
+            400: '#ffca28',
+         },
          bogus: {
             50: '#e3f4f6',
             100: '#b9e3ea',
@@ -86,11 +89,8 @@ const theme = createTheme(
             A200: '#8be4ff',
             A400: '#58d9ff',
             A700: '#3fd3ff',
-         }
+         },
       },
-      // shadows: {
-      //    sidebars: '0px 5px 10px 1px #acaeb4',
-      // },
       components: {
          // Disable Ripple Effect
          MuiButtonBase: {

@@ -30,24 +30,24 @@ const Dashboard = () => {
    };
 
    let leadData = [
-      { name: 'Total Leads', value: 3000, label: 'total', lead: true, month: true, icon: <TimelineIcon fontSize="small" sx={{ color: "common.white" }} /> },
-      { name: 'Hired Leads', value: 2500, label: 'hired', lead: true, month: true, icon: <TimelineIcon fontSize="small" sx={{ color: "common.white" }} /> },
-      { name: 'Lost Leads', value: 500, label: 'lost', lead: true, month: true, icon: <TimelineIcon fontSize="small" sx={{ color: "common.white" }} /> },
-      { name: 'Unresponsive Leads', value: 250, label: 'unresponsive', lead: true, month: true, icon: <TimelineIcon fontSize="small" sx={{ color: "common.white" }} /> },
-      { name: 'Bogus Leads', value: 250, label: 'bogus', lead: true, month: true, icon: <TimelineIcon fontSize="small" sx={{ color: "common.white" }} /> },
+      { name: 'Total Leads', value: 3000, gridBgColor: 'indigo', lead: true, month: true, icon: <TimelineIcon fontSize="small" sx={{ color: "common.white" }} /> },
+      { name: 'Hired Leads', value: 2500, gridBgColor: 'teal', lead: true, month: true, icon: <TimelineIcon fontSize="small" sx={{ color: "common.white" }} /> },
+      { name: 'Lost Leads', value: 500, gridBgColor: 'red', lead: true, month: true, icon: <TimelineIcon fontSize="small" sx={{ color: "common.white" }} /> },
+      { name: 'Unresponsive Leads', value: 250, gridBgColor: 'blue', lead: true, month: true, icon: <TimelineIcon fontSize="small" sx={{ color: "common.white" }} /> },
+      { name: 'Bogus Leads', value: 250, gridBgColor: 'bogus', lead: true, month: true, icon: <TimelineIcon fontSize="small" sx={{ color: "common.white" }} /> },
    ];
    let hrData = [
-      { name: 'All Employees', value: 30, label: 'total', lead: true, month: true, icon: <PersonIcon sx={{ color: "common.white" }} /> },
-      { name: 'Increment Due', value: 5, label: 'hired', lead: true, month: true, icon: <CurrencyRupeeIcon sx={{ color: "common.white" }} /> },
-      { name: 'Active Employees', value: 500, label: 'lost', lead: true, month: true, icon: <Person2Icon sx={{ color: "common.white" }} /> },
+      { name: 'All Employees', value: 30, gridBgColor: '', lead: true, month: true, icon: <PersonIcon sx={{ color: "primary.dark" }} /> },
+      { name: 'Increment Due', value: 5, gridBgColor: '', lead: true, month: true, icon: <CurrencyRupeeIcon sx={{ color: "primary.dark" }} /> },
+      { name: 'Active Employees', value: 500, gridBgColor: '', lead: true, month: true, icon: <Person2Icon sx={{ color: "primary.dark" }} /> },
    ];
    let projectData = [
-      { name: 'Total Projects', value: 50, label: 'total', lead: true, month: true, icon: <DashboardCustomizeIcon sx={{ color: "common.white" }} /> },
-      { name: 'Total Tasks', value: 250, label: 'hired', lead: true, month: true, icon: <FormatListNumberedIcon sx={{ color: "common.white" }} /> },
-      { name: 'Today Tasks', value: 25, label: 'lost', lead: true, month: true, icon: <FormatListNumberedIcon sx={{ color: "common.white" }} /> },
-      { name: 'Overdue Tasks', value: 50, label: 'unresponsive', lead: true, month: true, icon: <FormatListNumberedIcon sx={{ color: "common.white" }} /> },
-      { name: 'Categories', value: 100, label: 'bogus', lead: true, month: false, icon: <AccountTreeIcon sx={{ color: "common.white" }} /> },
-      { name: 'Credentials', value: 10, label: 'bogus', lead: true, month: false, icon: <TuneIcon sx={{ color: "common.white" }} /> },
+      { name: 'Total Projects', value: 50, gridBgColor: '', lead: true, month: true, icon: <DashboardCustomizeIcon sx={{ color: "primary.dark" }} /> },
+      { name: 'Total Tasks', value: 250, gridBgColor: '', lead: true, month: true, icon: <FormatListNumberedIcon sx={{ color: "primary.dark" }} /> },
+      { name: 'Today Tasks', value: 25, gridBgColor: '', lead: true, month: true, icon: <FormatListNumberedIcon sx={{ color: "primary.dark" }} /> },
+      { name: 'Overdue Tasks', value: 50, gridBgColor: '', lead: true, month: true, icon: <FormatListNumberedIcon sx={{ color: "primary.dark" }} /> },
+      { name: 'Categories', value: 100, gridBgColor: '', lead: true, month: false, icon: <AccountTreeIcon sx={{ color: "primary.dark" }} /> },
+      { name: 'Credentials', value: 10, gridBgColor: '', lead: true, month: false, icon: <TuneIcon sx={{ color: "primary.dark" }} /> },
    ];
 
    return (

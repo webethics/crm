@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import MenuIcon from '@mui/icons-material/Menu';
-import { Drawer, Box, Typography, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Avatar, Badge, Switch, ListItemAvatar, Tooltip } from '@mui/material';
+// import MenuIcon from '@mui/icons-material/Menu';
+// import { IconButton} from '@mui/material';
+import { Drawer, Box, Typography, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Avatar, Badge, Switch, ListItemAvatar, Tooltip } from '@mui/material';
+import { NavLink } from 'react-router-dom';
 
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize';
 import PeopleIcon from '@mui/icons-material/People';
@@ -57,14 +59,12 @@ const Sidebar = () => {
                      </Typography>
                   </ListItem>
                   <ListItem disablePadding>
-                     <ListItemButton component="a" href="#dashboard" sx={{ borderRadius: "3px" }} selected={selectedIndex === 0} onClick={() => handleListItemClick(0)}>
+                     <NavLink to='/' onClick={() => handleListItemClick(0)} className={`${selectedIndex === 0 ? 'Mui-selected' : ''} MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-11sxtjm-MuiButtonBase-root-MuiListItemButton-root`}>
                         <ListItemIcon sx={{ minWidth: "30px" }}>
-                           <Tooltip title="" placement="right" arrow>
-                              <DashboardCustomizeIcon fontSize="small" sx={{ color: selectedIndex === 0 ? 'primary.dark' : 'sidebar.iconText' }} />
-                           </Tooltip>
+                           <DashboardCustomizeIcon fontSize="small" sx={{ color: selectedIndex === 0 ? 'primary.dark' : 'sidebar.iconText' }} />
                         </ListItemIcon>
                         <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 0 ? 'primary.dark' : 'sidebar.iconText' }}>Dashboard</Typography>} sx={{ pt: "2px", m: 0, display: 'block' }} />
-                     </ListItemButton>
+                     </NavLink>
                   </ListItem>
                   <ListItem disablePadding>
                      <ListItemButton component="a" href="#team" sx={{ borderRadius: "3px" }} selected={selectedIndex === 1} onClick={() => handleListItemClick(1)}>
@@ -84,14 +84,14 @@ const Sidebar = () => {
                      </Typography>
                   </ListItem>
                   <ListItem disablePadding>
-                     <ListItemButton component="a" href="#projects" sx={{ borderRadius: "3px" }} selected={selectedIndex === 7} onClick={() => handleListItemClick(7)}>
+                     <NavLink to='/projects' onClick={() => handleListItemClick(7)} className={`${selectedIndex === 7 ? 'Mui-selected' : ''} MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-11sxtjm-MuiButtonBase-root-MuiListItemButton-root`}>
                         <ListItemIcon sx={{ minWidth: "30px" }}>
                            <Tooltip title="" placement="right" arrow>
                               <FolderCopyIcon fontSize="small" sx={{ color: selectedIndex === 7 ? 'primary.dark' : 'sidebar.iconText' }} />
                            </Tooltip>
                         </ListItemIcon>
                         <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 7 ? 'primary.dark' : 'sidebar.iconText' }}>Projects <Badge badgeContent={100} max={99} sx={{ ml: 3 }}></Badge></Typography>} sx={{ pt: "2px", m: 0 }} />
-                     </ListItemButton>
+                     </NavLink>
                   </ListItem>
                   <ListItem disablePadding>
                      <ListItemButton component="a" href="#category" sx={{ borderRadius: "3px" }} selected={selectedIndex === 8} onClick={() => handleListItemClick(8)}>
