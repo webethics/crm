@@ -83,17 +83,19 @@ border-radius: 4px;
 border: 1px solid rgba(0, 0, 0, 0.12);
 position: relative;
 background-color: ${props => props.theme.palette.common.white};
-   &:hover {
-      border-color: ${props => props.theme.palette.primary.dark};
-      .MuiCheckbox-root {
+   ${props => props.theme.breakpoints.up("lg")} {
+      &:hover {
          border-color: ${props => props.theme.palette.primary.dark};
-         &:after {
-            background-color: ${props => props.theme.palette.primary.dark};
+         .MuiCheckbox-root {
+            border-color: ${props => props.theme.palette.primary.dark};
+            &:after {
+               background-color: ${props => props.theme.palette.primary.dark};
+            }
          }
-      }
-      .iconWrap {
-         > div {
-            opacity: 1;
+         .iconWrap {
+            > div {
+               opacity: 1;
+            }
          }
       }
    }
@@ -111,7 +113,6 @@ const IconWrap = styled('div')`
 `;
 
 const CustomSpeedDial = styled(SpeedDial)`
-   // background-color:${props => props.theme.palette.common.white};
    opacity:0;
    border-radius:4px;
    padding: 5px;
@@ -122,9 +123,11 @@ const CustomSpeedDial = styled(SpeedDial)`
   .MuiFab-root {
       box-shadow: none;
       border-radius: 0;
-      &:hover {
-         svg {
-            color:${props => props.theme.palette.primary.dark};
+      ${props => props.theme.breakpoints.up("lg")} {
+         &:hover {
+            svg {
+               color:${props => props.theme.palette.primary.dark};
+            }
          }
       }
    }
