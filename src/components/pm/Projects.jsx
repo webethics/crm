@@ -15,6 +15,7 @@ import DownloadIcon from '@mui/icons-material/Download';
 import PersonIcon from '@mui/icons-material/Person';
 import { NavLink } from 'react-router-dom';
 import CloseIcon from '@mui/icons-material/Close';
+import useViewport from '../../utils/useViewport';
 
 const actions = [
    { icon: <CreateIcon sx={{ color: 'sidebar.iconText', fontSize: '16px' }} />, name: 'Edit' },
@@ -32,7 +33,6 @@ const CustomChip = styled(Chip)`
    color: ${props => props.theme.palette.primary.dark};
    font-size:12px;
    font-weight: 500;
-   margin-left: auto;
    cursor:pointer;
    margin-top: 8px;
    svg {
@@ -54,11 +54,8 @@ const CustomChip = styled(Chip)`
 const RedesignCheckbox = styled(Checkbox)`
    padding:0;
    border-radius: 0;
-   position: absolute;
-   top:5px;
-   left:5px;
-   width: 15px;
-   height: 15px;
+   width: 17px;
+   height: 17px;
    overflow: hidden;
    border-radius: 2px;
    border: 1px solid rgba(0,0,0,0.12);
@@ -86,11 +83,12 @@ position: relative;
 background-color: ${props => props.theme.palette.common.white};
    ${props => props.theme.breakpoints.up("lg")} {
       &:hover {
-         border-color: ${props => props.theme.palette.primary.dark};
          .MuiCheckbox-root {
-            border-color: ${props => props.theme.palette.primary.dark};
-            &:after {
-               background-color: ${props => props.theme.palette.primary.dark};
+            &:not(.Mui-checked) {
+               border-color: ${props => props.theme.palette.sidebar.iconText};
+               &:after {
+                  background-color: ${props => props.theme.palette.sidebar.iconText};
+               }
             }
          }
          .iconWrap {
@@ -108,18 +106,18 @@ const IconWrap = styled('div')`
    flex-wrap: wrap;
    align-items: center;
    justify-content: flex-end;
-   position: absolute;
-   top: 50px;
-   right: 14px;
+   margin-left: auto;
 `;
 
 const CustomSpeedDial = styled(SpeedDial)`
-   opacity:0;
    border-radius:4px;
-   padding: 5px;
    transition: opacity 0.25s;
+   padding: 0;
    &:hover {
       color: #2e8b57;
+   }
+   ${props => props.theme.breakpoints.up("lg")} {
+      opacity:0;
    }
   .MuiFab-root {
       box-shadow: none;
@@ -139,7 +137,7 @@ const CustomSpeedDial = styled(SpeedDial)`
       border-radius: 0;
       min-height:initial;
       background-color:transparent;
-      ${props => props.theme.breakpoints.up("lg")} {
+      ${props => props.theme.breakpoints.up("xs")} {
          display: none;
       }
       &:hover {
@@ -169,12 +167,12 @@ const CustomSpeedDial = styled(SpeedDial)`
 
 
 const Projects = () => {
+   const { width } = useViewport();
    const [status, setStatus] = useState('');
 
    const handleChange = (event) => {
       setStatus(event.target.value);
    };
-
    return (
       <Container sx={{ maxWidth: { xs: 'initial' }, pt: { xs: '25px', lg: 0 }, px: 0 }}>
          <Typography variant="h1" component="h1" sx={{ color: 'primary.dark', mb: 1, px: 2, fontFamily: "'Hind', sans-serif" }}>Projects</Typography>
@@ -182,49 +180,32 @@ const Projects = () => {
          <Grid container spacing={2} sx={{ px: { xs: 2 } }}>
             <Grid item xs={12} sm={6} md={4} xl={4} xxl={3}>
                <PaperWrap elevation={0} sx={{ p: 3 }}>
-                  <Grid item xs={12} sx={{ display: 'flex', alignItems: { xs: 'center', lg: 'flex-start' }, flexDirection: 'column' }}>
+                  <Grid item xs={12} sx={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}>
 
-                     <RedesignCheckbox size="small" sx={{ color: 'sidebar.label' }} />
-                     <CustomChip label="Active" sx={{ position: 'absolute', right: '20px', zIndex: 3, cursor: 'pointer', mt: 0 }} />
-                     {/* <Box sx={{ minWidth: 120 }}>
-                        <FormControl fullWidth>
-                           <InputLabel id="demo-simple-select-label">Status</InputLabel>
-                           <Select
-                              labelId="demo-simple-select-label"
-                              id="demo-simple-select"
-                              value={status}
-                              label="Status"
-                              onChange={handleChange}
-                              sx={{
-                                 backgroundColor: 'primary.light',
-                              }}
+                     <Box component="div" sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row', alignItems: 'center', width: '100%', pb: 2 }}>
+                        <RedesignCheckbox size="small" sx={{ color: 'sidebar.label', display: 'inline-flex' }} />
+
+                        <IconWrap className='iconWrap'>
+                           <CustomSpeedDial
+                              ariaLabel="SpeedDial basic example"
+                              icon={<MoreVertIcon fontSize="small" sx={{ color: 'sidebar.iconText' }} />}
+                              direction='left'
+                              open={true}
                            >
-                              <MenuItem value={10}>Open</MenuItem>
-                              <MenuItem value={20}>Close</MenuItem>
-                              <MenuItem value={30}>Hold</MenuItem>
-                           </Select>
-                        </FormControl>
-                     </Box> */}
-                     <IconWrap className='iconWrap'>
-                        <CustomSpeedDial
-                           ariaLabel="SpeedDial basic example"
-                           icon={<MoreVertIcon fontSize="small" sx={{ color: 'sidebar.iconText' }} />}
-                           direction="down"
-                           open={true}
-                        >
-                           {actions.map((action) => (
-                              <SpeedDialAction
-                                 key={action.name}
-                                 icon={action.icon}
-                                 tooltipTitle={action.name}
-                                 arrow
-                              />
-                           ))}
-                        </CustomSpeedDial>
-                     </IconWrap>
-
+                              {actions.map((action) => (
+                                 <SpeedDialAction
+                                    key={action.name}
+                                    icon={action.icon}
+                                    tooltipTitle={action.name}
+                                    arrow
+                                 />
+                              ))}
+                           </CustomSpeedDial>
+                        </IconWrap>
+                        <CustomChip label="Active" sx={{ cursor: 'pointer', mt: 0, mr: 0 }} />
+                     </Box>
                      <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '100%' }, pb: 3, position: 'relative', }}>
-                        <NavLink className="projectTitle"><Typography component="div" sx={{ fontWeight: '600', color: 'primary.dark', fontFamily: "'Roboto',sans-serif", fontSize: '15px', pr: '60px' }}>Webethics CRM Designs Webethics CRM Designs Webethics CRM Designs</Typography></NavLink>
+                        <NavLink className="projectTitle"><Typography component="div" sx={{ fontWeight: '600', color: 'primary.dark', fontFamily: "'Roboto',sans-serif", fontSize: '15px' }}>Webethics CRM Designs Webethics CRM Designs Webethics CRM Designs</Typography></NavLink>
                         <Typography component="div" sx={{ color: 'sidebar.iconText', lineHeight: 1.4, fontSize: '13px', mt: 0.5, fontFamily: "'Roboto',sans-serif", letterSpacing: '0.2px' }}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Typography>
                      </Box>
 
@@ -260,49 +241,32 @@ const Projects = () => {
             </Grid>
             <Grid item xs={12} sm={6} md={4} xl={4} xxl={3}>
                <PaperWrap elevation={0} sx={{ p: 3 }}>
-                  <Grid item xs={12} sx={{ display: 'flex', alignItems: { xs: 'center', lg: 'flex-start' }, flexDirection: 'column' }}>
+                  <Grid item xs={12} sx={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}>
 
-                     <RedesignCheckbox size="small" sx={{ color: 'sidebar.label' }} />
-                     <CustomChip label="Active" sx={{ position: 'absolute', right: '20px', zIndex: 3, cursor: 'pointer', mt: 0 }} />
-                     {/* <Box sx={{ minWidth: 120 }}>
-                        <FormControl fullWidth>
-                           <InputLabel id="demo-simple-select-label">Status</InputLabel>
-                           <Select
-                              labelId="demo-simple-select-label"
-                              id="demo-simple-select"
-                              value={status}
-                              label="Status"
-                              onChange={handleChange}
-                              sx={{
-                                 backgroundColor: 'primary.light',
-                              }}
+                     <Box component="div" sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row', alignItems: 'center', width: '100%', pb: 2 }}>
+                        <RedesignCheckbox size="small" sx={{ color: 'sidebar.label', display: 'inline-flex' }} />
+
+                        <IconWrap className='iconWrap'>
+                           <CustomSpeedDial
+                              ariaLabel="SpeedDial basic example"
+                              icon={<MoreVertIcon fontSize="small" sx={{ color: 'sidebar.iconText' }} />}
+                              direction='left'
+                              open={true}
                            >
-                              <MenuItem value={10}>Open</MenuItem>
-                              <MenuItem value={20}>Close</MenuItem>
-                              <MenuItem value={30}>Hold</MenuItem>
-                           </Select>
-                        </FormControl>
-                     </Box> */}
-                     <IconWrap className='iconWrap'>
-                        <CustomSpeedDial
-                           ariaLabel="SpeedDial basic example"
-                           icon={<MoreVertIcon fontSize="small" sx={{ color: 'sidebar.iconText' }} />}
-                           direction="down"
-                           open={true}
-                        >
-                           {actions.map((action) => (
-                              <SpeedDialAction
-                                 key={action.name}
-                                 icon={action.icon}
-                                 tooltipTitle={action.name}
-                                 arrow
-                              />
-                           ))}
-                        </CustomSpeedDial>
-                     </IconWrap>
-
+                              {actions.map((action) => (
+                                 <SpeedDialAction
+                                    key={action.name}
+                                    icon={action.icon}
+                                    tooltipTitle={action.name}
+                                    arrow
+                                 />
+                              ))}
+                           </CustomSpeedDial>
+                        </IconWrap>
+                        <CustomChip label="Active" sx={{ cursor: 'pointer', mt: 0, mr: 0 }} />
+                     </Box>
                      <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '100%' }, pb: 3, position: 'relative', }}>
-                        <NavLink className="projectTitle"><Typography component="div" sx={{ fontWeight: '600', color: 'primary.dark', fontFamily: "'Roboto',sans-serif", fontSize: '15px', pr: '60px' }}>Webethics CRM Designs Webethics CRM Designs Webethics CRM Designs</Typography></NavLink>
+                        <NavLink className="projectTitle"><Typography component="div" sx={{ fontWeight: '600', color: 'primary.dark', fontFamily: "'Roboto',sans-serif", fontSize: '15px' }}>Webethics CRM Designs Webethics CRM Designs Webethics CRM Designs</Typography></NavLink>
                         <Typography component="div" sx={{ color: 'sidebar.iconText', lineHeight: 1.4, fontSize: '13px', mt: 0.5, fontFamily: "'Roboto',sans-serif", letterSpacing: '0.2px' }}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Typography>
                      </Box>
 
@@ -338,49 +302,32 @@ const Projects = () => {
             </Grid>
             <Grid item xs={12} sm={6} md={4} xl={4} xxl={3}>
                <PaperWrap elevation={0} sx={{ p: 3 }}>
-                  <Grid item xs={12} sx={{ display: 'flex', alignItems: { xs: 'center', lg: 'flex-start' }, flexDirection: 'column' }}>
+                  <Grid item xs={12} sx={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}>
 
-                     <RedesignCheckbox size="small" sx={{ color: 'sidebar.label' }} />
-                     <CustomChip label="Active" sx={{ position: 'absolute', right: '20px', zIndex: 3, cursor: 'pointer', mt: 0 }} />
-                     {/* <Box sx={{ minWidth: 120 }}>
-                        <FormControl fullWidth>
-                           <InputLabel id="demo-simple-select-label">Status</InputLabel>
-                           <Select
-                              labelId="demo-simple-select-label"
-                              id="demo-simple-select"
-                              value={status}
-                              label="Status"
-                              onChange={handleChange}
-                              sx={{
-                                 backgroundColor: 'primary.light',
-                              }}
+                     <Box component="div" sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row', alignItems: 'center', width: '100%', pb: 2 }}>
+                        <RedesignCheckbox size="small" sx={{ color: 'sidebar.label', display: 'inline-flex' }} />
+
+                        <IconWrap className='iconWrap'>
+                           <CustomSpeedDial
+                              ariaLabel="SpeedDial basic example"
+                              icon={<MoreVertIcon fontSize="small" sx={{ color: 'sidebar.iconText' }} />}
+                              direction='left'
+                              open={true}
                            >
-                              <MenuItem value={10}>Open</MenuItem>
-                              <MenuItem value={20}>Close</MenuItem>
-                              <MenuItem value={30}>Hold</MenuItem>
-                           </Select>
-                        </FormControl>
-                     </Box> */}
-                     <IconWrap className='iconWrap'>
-                        <CustomSpeedDial
-                           ariaLabel="SpeedDial basic example"
-                           icon={<MoreVertIcon fontSize="small" sx={{ color: 'sidebar.iconText' }} />}
-                           direction="down"
-                           open={true}
-                        >
-                           {actions.map((action) => (
-                              <SpeedDialAction
-                                 key={action.name}
-                                 icon={action.icon}
-                                 tooltipTitle={action.name}
-                                 arrow
-                              />
-                           ))}
-                        </CustomSpeedDial>
-                     </IconWrap>
-
+                              {actions.map((action) => (
+                                 <SpeedDialAction
+                                    key={action.name}
+                                    icon={action.icon}
+                                    tooltipTitle={action.name}
+                                    arrow
+                                 />
+                              ))}
+                           </CustomSpeedDial>
+                        </IconWrap>
+                        <CustomChip label="Active" sx={{ cursor: 'pointer', mt: 0, mr: 0 }} />
+                     </Box>
                      <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '100%' }, pb: 3, position: 'relative', }}>
-                        <NavLink className="projectTitle"><Typography component="div" sx={{ fontWeight: '600', color: 'primary.dark', fontFamily: "'Roboto',sans-serif", fontSize: '15px', pr: '60px' }}>Webethics CRM Designs Webethics CRM Designs Webethics CRM Designs</Typography></NavLink>
+                        <NavLink className="projectTitle"><Typography component="div" sx={{ fontWeight: '600', color: 'primary.dark', fontFamily: "'Roboto',sans-serif", fontSize: '15px' }}>Webethics CRM Designs Webethics CRM Designs Webethics CRM Designs</Typography></NavLink>
                         <Typography component="div" sx={{ color: 'sidebar.iconText', lineHeight: 1.4, fontSize: '13px', mt: 0.5, fontFamily: "'Roboto',sans-serif", letterSpacing: '0.2px' }}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Typography>
                      </Box>
 
@@ -416,49 +363,32 @@ const Projects = () => {
             </Grid>
             <Grid item xs={12} sm={6} md={4} xl={4} xxl={3}>
                <PaperWrap elevation={0} sx={{ p: 3 }}>
-                  <Grid item xs={12} sx={{ display: 'flex', alignItems: { xs: 'center', lg: 'flex-start' }, flexDirection: 'column' }}>
+                  <Grid item xs={12} sx={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}>
 
-                     <RedesignCheckbox size="small" sx={{ color: 'sidebar.label' }} />
-                     <CustomChip label="Active" sx={{ position: 'absolute', right: '20px', zIndex: 3, cursor: 'pointer', mt: 0 }} />
-                     {/* <Box sx={{ minWidth: 120 }}>
-                        <FormControl fullWidth>
-                           <InputLabel id="demo-simple-select-label">Status</InputLabel>
-                           <Select
-                              labelId="demo-simple-select-label"
-                              id="demo-simple-select"
-                              value={status}
-                              label="Status"
-                              onChange={handleChange}
-                              sx={{
-                                 backgroundColor: 'primary.light',
-                              }}
+                     <Box component="div" sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row', alignItems: 'center', width: '100%', pb: 2 }}>
+                        <RedesignCheckbox size="small" sx={{ color: 'sidebar.label', display: 'inline-flex' }} />
+
+                        <IconWrap className='iconWrap'>
+                           <CustomSpeedDial
+                              ariaLabel="SpeedDial basic example"
+                              icon={<MoreVertIcon fontSize="small" sx={{ color: 'sidebar.iconText' }} />}
+                              direction='left'
+                              open={true}
                            >
-                              <MenuItem value={10}>Open</MenuItem>
-                              <MenuItem value={20}>Close</MenuItem>
-                              <MenuItem value={30}>Hold</MenuItem>
-                           </Select>
-                        </FormControl>
-                     </Box> */}
-                     <IconWrap className='iconWrap'>
-                        <CustomSpeedDial
-                           ariaLabel="SpeedDial basic example"
-                           icon={<MoreVertIcon fontSize="small" sx={{ color: 'sidebar.iconText' }} />}
-                           direction="down"
-                           open={true}
-                        >
-                           {actions.map((action) => (
-                              <SpeedDialAction
-                                 key={action.name}
-                                 icon={action.icon}
-                                 tooltipTitle={action.name}
-                                 arrow
-                              />
-                           ))}
-                        </CustomSpeedDial>
-                     </IconWrap>
-
+                              {actions.map((action) => (
+                                 <SpeedDialAction
+                                    key={action.name}
+                                    icon={action.icon}
+                                    tooltipTitle={action.name}
+                                    arrow
+                                 />
+                              ))}
+                           </CustomSpeedDial>
+                        </IconWrap>
+                        <CustomChip label="Active" sx={{ cursor: 'pointer', mt: 0, mr: 0 }} />
+                     </Box>
                      <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '100%' }, pb: 3, position: 'relative', }}>
-                        <NavLink className="projectTitle"><Typography component="div" sx={{ fontWeight: '600', color: 'primary.dark', fontFamily: "'Roboto',sans-serif", fontSize: '15px', pr: '60px' }}>Webethics CRM Designs Webethics CRM Designs Webethics CRM Designs</Typography></NavLink>
+                        <NavLink className="projectTitle"><Typography component="div" sx={{ fontWeight: '600', color: 'primary.dark', fontFamily: "'Roboto',sans-serif", fontSize: '15px' }}>Webethics CRM Designs Webethics CRM Designs Webethics CRM Designs</Typography></NavLink>
                         <Typography component="div" sx={{ color: 'sidebar.iconText', lineHeight: 1.4, fontSize: '13px', mt: 0.5, fontFamily: "'Roboto',sans-serif", letterSpacing: '0.2px' }}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Typography>
                      </Box>
 
@@ -498,3 +428,24 @@ const Projects = () => {
 }
 
 export default Projects;
+
+
+{/* <Box sx={{ minWidth: 120 }}>
+   <FormControl fullWidth>
+      <InputLabel id="demo-simple-select-label">Status</InputLabel>
+      <Select
+         labelId="demo-simple-select-label"
+         id="demo-simple-select"
+         value={status}
+         label="Status"
+         onChange={handleChange}
+         sx={{
+            backgroundColor: 'primary.light',
+         }}
+      >
+         <MenuItem value={10}>Open</MenuItem>
+         <MenuItem value={20}>Close</MenuItem>
+         <MenuItem value={30}>Hold</MenuItem>
+      </Select>
+   </FormControl>
+</Box> */}
