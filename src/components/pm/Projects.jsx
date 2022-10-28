@@ -184,7 +184,6 @@ const Projects = () => {
 
                      <Box component="div" sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row', alignItems: 'center', width: '100%', pb: 2 }}>
                         <RedesignCheckbox size="small" sx={{ color: 'sidebar.label', display: 'inline-flex' }} />
-
                         <IconWrap className='iconWrap'>
                            <CustomSpeedDial
                               ariaLabel="SpeedDial basic example"
@@ -206,25 +205,25 @@ const Projects = () => {
                      </Box>
                      <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '100%' }, pb: 3, position: 'relative', }}>
                         <NavLink className="projectTitle"><Typography component="div" sx={{ fontWeight: '600', color: 'primary.dark', fontFamily: "'Roboto',sans-serif", fontSize: '15px' }}>Webethics CRM Designs Webethics CRM Designs Webethics CRM Designs</Typography></NavLink>
-                        <Typography component="div" sx={{ color: 'sidebar.iconText', lineHeight: 1.4, fontSize: '13px', mt: 0.5, fontFamily: "'Roboto',sans-serif", letterSpacing: '0.2px' }}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Typography>
+                        <Typography component="div" sx={{ color: 'sidebar.iconText', lineHeight: 1.4, fontSize: '14px', mt: 0.5, fontFamily: "'Roboto',sans-serif", letterSpacing: '0.2px' }}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Typography>
                      </Box>
 
                      <Box component="div" sx={{ boxSizing: 'border-box', width: '100%' }}>
-                        <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Categories</Typography>
+                        <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: '13px', fontWeight: '500', textTransform: 'uppercase' }}>Categories</Typography>
                         <Typography component="div" sx={{ color: 'sidebar.iconText', lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>Web Development, RWD Designs, Graphic Designs</Typography>
                      </Box>
                      <Box component="div" sx={{ boxSizing: 'border-box', width: '100%', pt: 3, display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
                         <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '50%' } }}>
-                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Client Name</Typography>
-                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>Mr. Dallas</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: '13px', fontWeight: '500', textTransform: 'uppercase' }}>Client Name</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: '13px' }}>Mr. Dallas</Typography>
                         </Box>
                         <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '50%' } }}>
-                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Account ID</Typography>
-                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>Mrs. Anita Sharma</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: '13px', fontWeight: '500', textTransform: 'uppercase' }}>Account ID</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: '13px' }}>Mrs. Anita Sharma</Typography>
                         </Box>
                         <Box component="div" sx={{ boxSizing: 'border-box', width: '100%', my: 2 }}>
-                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Contract Name</Typography>
-                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>CRM Designs</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: '13px', fontWeight: '500', textTransform: 'uppercase' }}>Contract Name</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: '13px' }}>CRM Designs</Typography>
                         </Box>
                         <Box component="div" sx={{ boxSizing: 'border-box', width: '100%' }}>
                            <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="CRM Designs" />
@@ -235,7 +234,6 @@ const Projects = () => {
                            <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="JS" />
                         </Box>
                      </Box>
-
                   </Grid>
                </PaperWrap>
             </Grid>
@@ -245,7 +243,6 @@ const Projects = () => {
 
                      <Box component="div" sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row', alignItems: 'center', width: '100%', pb: 2 }}>
                         <RedesignCheckbox size="small" sx={{ color: 'sidebar.label', display: 'inline-flex' }} />
-
                         <IconWrap className='iconWrap'>
                            <CustomSpeedDial
                               ariaLabel="SpeedDial basic example"
@@ -267,25 +264,25 @@ const Projects = () => {
                      </Box>
                      <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '100%' }, pb: 3, position: 'relative', }}>
                         <NavLink className="projectTitle"><Typography component="div" sx={{ fontWeight: '600', color: 'primary.dark', fontFamily: "'Roboto',sans-serif", fontSize: '15px' }}>Webethics CRM Designs Webethics CRM Designs Webethics CRM Designs</Typography></NavLink>
-                        <Typography component="div" sx={{ color: 'sidebar.iconText', lineHeight: 1.4, fontSize: '13px', mt: 0.5, fontFamily: "'Roboto',sans-serif", letterSpacing: '0.2px' }}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Typography>
+                        <Typography component="div" sx={{ color: 'sidebar.iconText', lineHeight: 1.4, fontSize: '14px', mt: 0.5, fontFamily: "'Roboto',sans-serif", letterSpacing: '0.2px' }}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Typography>
                      </Box>
 
                      <Box component="div" sx={{ boxSizing: 'border-box', width: '100%' }}>
-                        <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Categories</Typography>
+                        <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: '13px', fontWeight: '500', textTransform: 'uppercase' }}>Categories</Typography>
                         <Typography component="div" sx={{ color: 'sidebar.iconText', lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>Web Development, RWD Designs, Graphic Designs</Typography>
                      </Box>
                      <Box component="div" sx={{ boxSizing: 'border-box', width: '100%', pt: 3, display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
                         <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '50%' } }}>
-                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Client Name</Typography>
-                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>Mr. Dallas</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: '13px', fontWeight: '500', textTransform: 'uppercase' }}>Client Name</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: '13px' }}>Mr. Dallas</Typography>
                         </Box>
                         <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '50%' } }}>
-                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Account ID</Typography>
-                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>Mrs. Anita Sharma</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: '13px', fontWeight: '500', textTransform: 'uppercase' }}>Account ID</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: '13px' }}>Mrs. Anita Sharma</Typography>
                         </Box>
                         <Box component="div" sx={{ boxSizing: 'border-box', width: '100%', my: 2 }}>
-                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Contract Name</Typography>
-                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>CRM Designs</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: '13px', fontWeight: '500', textTransform: 'uppercase' }}>Contract Name</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: '13px' }}>CRM Designs</Typography>
                         </Box>
                         <Box component="div" sx={{ boxSizing: 'border-box', width: '100%' }}>
                            <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="CRM Designs" />
@@ -296,7 +293,6 @@ const Projects = () => {
                            <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="JS" />
                         </Box>
                      </Box>
-
                   </Grid>
                </PaperWrap>
             </Grid>
@@ -306,7 +302,6 @@ const Projects = () => {
 
                      <Box component="div" sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row', alignItems: 'center', width: '100%', pb: 2 }}>
                         <RedesignCheckbox size="small" sx={{ color: 'sidebar.label', display: 'inline-flex' }} />
-
                         <IconWrap className='iconWrap'>
                            <CustomSpeedDial
                               ariaLabel="SpeedDial basic example"
@@ -328,25 +323,25 @@ const Projects = () => {
                      </Box>
                      <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '100%' }, pb: 3, position: 'relative', }}>
                         <NavLink className="projectTitle"><Typography component="div" sx={{ fontWeight: '600', color: 'primary.dark', fontFamily: "'Roboto',sans-serif", fontSize: '15px' }}>Webethics CRM Designs Webethics CRM Designs Webethics CRM Designs</Typography></NavLink>
-                        <Typography component="div" sx={{ color: 'sidebar.iconText', lineHeight: 1.4, fontSize: '13px', mt: 0.5, fontFamily: "'Roboto',sans-serif", letterSpacing: '0.2px' }}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Typography>
+                        <Typography component="div" sx={{ color: 'sidebar.iconText', lineHeight: 1.4, fontSize: '14px', mt: 0.5, fontFamily: "'Roboto',sans-serif", letterSpacing: '0.2px' }}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Typography>
                      </Box>
 
                      <Box component="div" sx={{ boxSizing: 'border-box', width: '100%' }}>
-                        <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Categories</Typography>
+                        <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: '13px', fontWeight: '500', textTransform: 'uppercase' }}>Categories</Typography>
                         <Typography component="div" sx={{ color: 'sidebar.iconText', lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>Web Development, RWD Designs, Graphic Designs</Typography>
                      </Box>
                      <Box component="div" sx={{ boxSizing: 'border-box', width: '100%', pt: 3, display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
                         <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '50%' } }}>
-                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Client Name</Typography>
-                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>Mr. Dallas</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: '13px', fontWeight: '500', textTransform: 'uppercase' }}>Client Name</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: '13px' }}>Mr. Dallas</Typography>
                         </Box>
                         <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '50%' } }}>
-                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Account ID</Typography>
-                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>Mrs. Anita Sharma</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: '13px', fontWeight: '500', textTransform: 'uppercase' }}>Account ID</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: '13px' }}>Mrs. Anita Sharma</Typography>
                         </Box>
                         <Box component="div" sx={{ boxSizing: 'border-box', width: '100%', my: 2 }}>
-                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Contract Name</Typography>
-                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>CRM Designs</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: '13px', fontWeight: '500', textTransform: 'uppercase' }}>Contract Name</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: '13px' }}>CRM Designs</Typography>
                         </Box>
                         <Box component="div" sx={{ boxSizing: 'border-box', width: '100%' }}>
                            <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="CRM Designs" />
@@ -357,7 +352,6 @@ const Projects = () => {
                            <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="JS" />
                         </Box>
                      </Box>
-
                   </Grid>
                </PaperWrap>
             </Grid>
@@ -367,7 +361,6 @@ const Projects = () => {
 
                      <Box component="div" sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row', alignItems: 'center', width: '100%', pb: 2 }}>
                         <RedesignCheckbox size="small" sx={{ color: 'sidebar.label', display: 'inline-flex' }} />
-
                         <IconWrap className='iconWrap'>
                            <CustomSpeedDial
                               ariaLabel="SpeedDial basic example"
@@ -389,25 +382,25 @@ const Projects = () => {
                      </Box>
                      <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '100%' }, pb: 3, position: 'relative', }}>
                         <NavLink className="projectTitle"><Typography component="div" sx={{ fontWeight: '600', color: 'primary.dark', fontFamily: "'Roboto',sans-serif", fontSize: '15px' }}>Webethics CRM Designs Webethics CRM Designs Webethics CRM Designs</Typography></NavLink>
-                        <Typography component="div" sx={{ color: 'sidebar.iconText', lineHeight: 1.4, fontSize: '13px', mt: 0.5, fontFamily: "'Roboto',sans-serif", letterSpacing: '0.2px' }}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Typography>
+                        <Typography component="div" sx={{ color: 'sidebar.iconText', lineHeight: 1.4, fontSize: '14px', mt: 0.5, fontFamily: "'Roboto',sans-serif", letterSpacing: '0.2px' }}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Typography>
                      </Box>
 
                      <Box component="div" sx={{ boxSizing: 'border-box', width: '100%' }}>
-                        <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Categories</Typography>
+                        <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: '13px', fontWeight: '500', textTransform: 'uppercase' }}>Categories</Typography>
                         <Typography component="div" sx={{ color: 'sidebar.iconText', lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>Web Development, RWD Designs, Graphic Designs</Typography>
                      </Box>
                      <Box component="div" sx={{ boxSizing: 'border-box', width: '100%', pt: 3, display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
                         <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '50%' } }}>
-                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Client Name</Typography>
-                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>Mr. Dallas</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: '13px', fontWeight: '500', textTransform: 'uppercase' }}>Client Name</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: '13px' }}>Mr. Dallas</Typography>
                         </Box>
                         <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '50%' } }}>
-                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Account ID</Typography>
-                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>Mrs. Anita Sharma</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: '13px', fontWeight: '500', textTransform: 'uppercase' }}>Account ID</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: '13px' }}>Mrs. Anita Sharma</Typography>
                         </Box>
                         <Box component="div" sx={{ boxSizing: 'border-box', width: '100%', my: 2 }}>
-                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Contract Name</Typography>
-                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>CRM Designs</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: '13px', fontWeight: '500', textTransform: 'uppercase' }}>Contract Name</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: '13px' }}>CRM Designs</Typography>
                         </Box>
                         <Box component="div" sx={{ boxSizing: 'border-box', width: '100%' }}>
                            <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="CRM Designs" />
@@ -418,7 +411,6 @@ const Projects = () => {
                            <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="JS" />
                         </Box>
                      </Box>
-
                   </Grid>
                </PaperWrap>
             </Grid>
