@@ -60,22 +60,22 @@ const Dashboard = () => {
                   <Tab label="Marketing" value='3' sx={{ color: 'common.white', textTransform: 'capitalize', fontWeight: '400' }} />
                </TabList>
             </Box>
-            <Typography variant="h1" component="h1" sx={{ color: '#625454', px: 2, mb: 0 }}>Dashboard</Typography>
+            <Typography variant="h1" component="h1" sx={{ color: 'primary.dark', px: 2, mb: 0, fontFamily: "'Hind', sans-serif" }}>Dashboard</Typography>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', width: '100%' }}>
                <TabPanel value={width > breakpoint ? "1" : '1'} sx={{ px: { xs: 2, xl: 2 }, width: { xs: '100%', lg: 'calc(50% - 32px)', xl: 'calc(33.333% - 32px)' } }}>
-                  <Typography variant="h2" component="div" sx={{ color: '#625454' }}>Project Management</Typography>
+                  <Typography variant="h2" component="div" sx={{ color: 'sidebar.label', fontFamily: "'Hind', sans-serif" }}>Project Management</Typography>
                   <Grid container spacing={2}>
                      <DashboardListLayout data={projectData} />
                   </Grid>
                </TabPanel>
                <TabPanel value={width > breakpoint ? "1" : '2'} sx={{ px: { xs: 2, xl: 2 }, width: { xs: '100%', lg: 'calc(50% - 32px)', xl: 'calc(33.333% - 32px)' } }}>
-                  <Typography variant="h2" component="div" sx={{ color: '#625454' }}>HR Management</Typography>
+                  <Typography variant="h2" component="div" sx={{ color: 'sidebar.label', fontFamily: "'Hind', sans-serif" }}>HR Management</Typography>
                   <Grid container spacing={2}>
                      <DashboardListLayout data={hrData} />
                   </Grid>
                </TabPanel>
                <TabPanel value={width > breakpoint ? "1" : '3'} sx={{ px: { xs: 2, xl: 2 }, width: { xs: '100%', lg: '100%', xl: 'calc(33.333% - 32px)' } }}>
-                  <Typography variant="h2" component="div" sx={{ color: '#625454' }}>Marketing</Typography>
+                  <Typography variant="h2" component="div" sx={{ color: 'sidebar.label', fontFamily: "'Hind', sans-serif" }}>Marketing</Typography>
                   <Grid container spacing={2}>
                      <DashboardListLayout data={leadData} />
                   </Grid>

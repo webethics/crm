@@ -51,13 +51,7 @@ body {
 .MuiTabs-root .MuiTabs-scrollButtons.Mui-disabled {
   opacity: 0.3;
 }
-/* @media screen and (max-width: 1199px) {
-  .MuiList-root .MuiCollapse-root:after {
-    bottom: 10px;
-    border-bottom: 8px solid transparent;
-    border-right: 8px solid #7a7e9e;
-    border-top: 8px solid transparent;
-    left: -16px;
-    right: initial;
-  }
-} */
+
+.projectTitle {
+  text-decoration: none;
+}

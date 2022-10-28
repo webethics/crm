@@ -16,29 +16,29 @@ const theme = createTheme(
       typography: {
          fontFamily: "'Hind', sans-serif",
          h1: {
-            fontFamily: "'Roboto', sans-serif",
+            // fontFamily: "'Roboto', sans-serif",
             fontSize: '18px',
             fontWeight: '500',
             marginBottom: '20px',
          },
          h2: {
-            fontFamily: "'Roboto', sans-serif",
+            // fontFamily: "'Roboto', sans-serif",
             fontSize: '14px',
             fontWeight: '500',
             marginBottom: '10px',
          },
-         h3: {
-            fontFamily: "'Roboto', sans-serif"
-         },
-         h4: {
-            fontFamily: "'Roboto', sans-serif"
-         },
-         h5: {
-            fontFamily: "'Roboto', sans-serif"
-         },
-         h6: {
-            fontFamily: "'Roboto', sans-serif"
-         },
+         // h3: {
+         //    fontFamily: "'Roboto', sans-serif"
+         // },
+         // h4: {
+         //    fontFamily: "'Roboto', sans-serif"
+         // },
+         // h5: {
+         //    fontFamily: "'Roboto', sans-serif"
+         // },
+         // h6: {
+         //    fontFamily: "'Roboto', sans-serif"
+         // },
          body1: {
             fontSize: '14px',
             color: '#62636a'
