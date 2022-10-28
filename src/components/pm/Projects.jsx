@@ -173,12 +173,12 @@ const Projects = () => {
 
    return (
       <Container sx={{ maxWidth: { xs: 'initial' }, pt: { xs: '25px', lg: 0 }, px: 0 }}>
-         <Typography variant="h1" component="h1" sx={{ color: 'primary.dark', mb: 1, fontFamily: "'Hind', sans-serif" }}>Projects</Typography>
+         <Typography variant="h1" component="h1" sx={{ color: 'primary.dark', mb: 1, px: 2, fontFamily: "'Hind', sans-serif" }}>Projects</Typography>
 
-         <Grid container spacing={2}>
-            <Grid item xs={12} sm={6} md={3} lg={6} xl={3}>
+         <Grid container spacing={2} sx={{ px: { xs: 2 } }}>
+            <Grid item xs={12} sm={6} md={4} xl={4} xxl={3}>
                <PaperWrap elevation={0} sx={{ p: 3 }}>
-                  <Grid item xs={12} sx={{ display: 'flex', alignItems: { xs: 'center', lg: 'flex-start' }, flexDirection: { xs: 'row', xl: 'column' } }}>
+                  <Grid item xs={12} sx={{ display: 'flex', alignItems: { xs: 'center', lg: 'flex-start' }, flexDirection: 'column' }}>
 
                      <RedesignCheckbox size="small" sx={{ color: 'sidebar.label' }} />
                      <CustomChip label="Active" sx={{ position: 'absolute', right: '20px', zIndex: 3, cursor: 'pointer', mt: 0 }} />
@@ -224,24 +224,258 @@ const Projects = () => {
                         <Typography component="div" sx={{ color: 'sidebar.iconText', lineHeight: 1.4, fontSize: '13px', mt: 0.5, fontFamily: "'Roboto',sans-serif", letterSpacing: '0.2px' }}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Typography>
                      </Box>
 
-                     <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '100%' } }}>
-                        <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '14px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Categories</Typography>
-                        <Typography component="div" sx={{ color: 'sidebar.iconText', lineHeight: 1.25, fontSize: { xs: '14px', lg: '12px' } }}>Web Development, RWD Designs, Graphic Designs</Typography>
+                     <Box component="div" sx={{ boxSizing: 'border-box', width: '100%' }}>
+                        <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Categories</Typography>
+                        <Typography component="div" sx={{ color: 'sidebar.iconText', lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>Web Development, RWD Designs, Graphic Designs</Typography>
                      </Box>
-                     <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '100%' }, pt: 3, display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+                     <Box component="div" sx={{ boxSizing: 'border-box', width: '100%', pt: 3, display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
                         <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '50%' } }}>
-                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '14px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Client Name</Typography>
-                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: { xs: '14px', lg: '12px' } }}>Mr. Dallas</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Client Name</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>Mr. Dallas</Typography>
                         </Box>
                         <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '50%' } }}>
-                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '14px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Account ID</Typography>
-                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: { xs: '14px', lg: '12px' } }}>Mrs. Anita Sharma</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Account ID</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>Mrs. Anita Sharma</Typography>
                         </Box>
-                        <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '100%' }, my: 2 }}>
-                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '14px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Contract Name</Typography>
-                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: { xs: '14px', lg: '12px' } }}>CRM Designs</Typography>
+                        <Box component="div" sx={{ boxSizing: 'border-box', width: '100%', my: 2 }}>
+                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Contract Name</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>CRM Designs</Typography>
                         </Box>
-                        <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '100%' } }}>
+                        <Box component="div" sx={{ boxSizing: 'border-box', width: '100%' }}>
+                           <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="CRM Designs" />
+                           <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="React JS" />
+                           <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="React MUI" />
+                           <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="Designs" />
+                           <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="MUI" />
+                           <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="JS" />
+                        </Box>
+                     </Box>
+
+                  </Grid>
+               </PaperWrap>
+            </Grid>
+            <Grid item xs={12} sm={6} md={4} xl={4} xxl={3}>
+               <PaperWrap elevation={0} sx={{ p: 3 }}>
+                  <Grid item xs={12} sx={{ display: 'flex', alignItems: { xs: 'center', lg: 'flex-start' }, flexDirection: 'column' }}>
+
+                     <RedesignCheckbox size="small" sx={{ color: 'sidebar.label' }} />
+                     <CustomChip label="Active" sx={{ position: 'absolute', right: '20px', zIndex: 3, cursor: 'pointer', mt: 0 }} />
+                     {/* <Box sx={{ minWidth: 120 }}>
+                        <FormControl fullWidth>
+                           <InputLabel id="demo-simple-select-label">Status</InputLabel>
+                           <Select
+                              labelId="demo-simple-select-label"
+                              id="demo-simple-select"
+                              value={status}
+                              label="Status"
+                              onChange={handleChange}
+                              sx={{
+                                 backgroundColor: 'primary.light',
+                              }}
+                           >
+                              <MenuItem value={10}>Open</MenuItem>
+                              <MenuItem value={20}>Close</MenuItem>
+                              <MenuItem value={30}>Hold</MenuItem>
+                           </Select>
+                        </FormControl>
+                     </Box> */}
+                     <IconWrap className='iconWrap'>
+                        <CustomSpeedDial
+                           ariaLabel="SpeedDial basic example"
+                           icon={<MoreVertIcon fontSize="small" sx={{ color: 'sidebar.iconText' }} />}
+                           direction="down"
+                           open={true}
+                        >
+                           {actions.map((action) => (
+                              <SpeedDialAction
+                                 key={action.name}
+                                 icon={action.icon}
+                                 tooltipTitle={action.name}
+                                 arrow
+                              />
+                           ))}
+                        </CustomSpeedDial>
+                     </IconWrap>
+
+                     <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '100%' }, pb: 3, position: 'relative', }}>
+                        <NavLink className="projectTitle"><Typography component="div" sx={{ fontWeight: '600', color: 'primary.dark', fontFamily: "'Roboto',sans-serif", fontSize: '15px', pr: '60px' }}>Webethics CRM Designs Webethics CRM Designs Webethics CRM Designs</Typography></NavLink>
+                        <Typography component="div" sx={{ color: 'sidebar.iconText', lineHeight: 1.4, fontSize: '13px', mt: 0.5, fontFamily: "'Roboto',sans-serif", letterSpacing: '0.2px' }}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Typography>
+                     </Box>
+
+                     <Box component="div" sx={{ boxSizing: 'border-box', width: '100%' }}>
+                        <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Categories</Typography>
+                        <Typography component="div" sx={{ color: 'sidebar.iconText', lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>Web Development, RWD Designs, Graphic Designs</Typography>
+                     </Box>
+                     <Box component="div" sx={{ boxSizing: 'border-box', width: '100%', pt: 3, display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+                        <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '50%' } }}>
+                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Client Name</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>Mr. Dallas</Typography>
+                        </Box>
+                        <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '50%' } }}>
+                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Account ID</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>Mrs. Anita Sharma</Typography>
+                        </Box>
+                        <Box component="div" sx={{ boxSizing: 'border-box', width: '100%', my: 2 }}>
+                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Contract Name</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>CRM Designs</Typography>
+                        </Box>
+                        <Box component="div" sx={{ boxSizing: 'border-box', width: '100%' }}>
+                           <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="CRM Designs" />
+                           <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="React JS" />
+                           <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="React MUI" />
+                           <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="Designs" />
+                           <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="MUI" />
+                           <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="JS" />
+                        </Box>
+                     </Box>
+
+                  </Grid>
+               </PaperWrap>
+            </Grid>
+            <Grid item xs={12} sm={6} md={4} xl={4} xxl={3}>
+               <PaperWrap elevation={0} sx={{ p: 3 }}>
+                  <Grid item xs={12} sx={{ display: 'flex', alignItems: { xs: 'center', lg: 'flex-start' }, flexDirection: 'column' }}>
+
+                     <RedesignCheckbox size="small" sx={{ color: 'sidebar.label' }} />
+                     <CustomChip label="Active" sx={{ position: 'absolute', right: '20px', zIndex: 3, cursor: 'pointer', mt: 0 }} />
+                     {/* <Box sx={{ minWidth: 120 }}>
+                        <FormControl fullWidth>
+                           <InputLabel id="demo-simple-select-label">Status</InputLabel>
+                           <Select
+                              labelId="demo-simple-select-label"
+                              id="demo-simple-select"
+                              value={status}
+                              label="Status"
+                              onChange={handleChange}
+                              sx={{
+                                 backgroundColor: 'primary.light',
+                              }}
+                           >
+                              <MenuItem value={10}>Open</MenuItem>
+                              <MenuItem value={20}>Close</MenuItem>
+                              <MenuItem value={30}>Hold</MenuItem>
+                           </Select>
+                        </FormControl>
+                     </Box> */}
+                     <IconWrap className='iconWrap'>
+                        <CustomSpeedDial
+                           ariaLabel="SpeedDial basic example"
+                           icon={<MoreVertIcon fontSize="small" sx={{ color: 'sidebar.iconText' }} />}
+                           direction="down"
+                           open={true}
+                        >
+                           {actions.map((action) => (
+                              <SpeedDialAction
+                                 key={action.name}
+                                 icon={action.icon}
+                                 tooltipTitle={action.name}
+                                 arrow
+                              />
+                           ))}
+                        </CustomSpeedDial>
+                     </IconWrap>
+
+                     <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '100%' }, pb: 3, position: 'relative', }}>
+                        <NavLink className="projectTitle"><Typography component="div" sx={{ fontWeight: '600', color: 'primary.dark', fontFamily: "'Roboto',sans-serif", fontSize: '15px', pr: '60px' }}>Webethics CRM Designs Webethics CRM Designs Webethics CRM Designs</Typography></NavLink>
+                        <Typography component="div" sx={{ color: 'sidebar.iconText', lineHeight: 1.4, fontSize: '13px', mt: 0.5, fontFamily: "'Roboto',sans-serif", letterSpacing: '0.2px' }}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Typography>
+                     </Box>
+
+                     <Box component="div" sx={{ boxSizing: 'border-box', width: '100%' }}>
+                        <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Categories</Typography>
+                        <Typography component="div" sx={{ color: 'sidebar.iconText', lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>Web Development, RWD Designs, Graphic Designs</Typography>
+                     </Box>
+                     <Box component="div" sx={{ boxSizing: 'border-box', width: '100%', pt: 3, display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+                        <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '50%' } }}>
+                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Client Name</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>Mr. Dallas</Typography>
+                        </Box>
+                        <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '50%' } }}>
+                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Account ID</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>Mrs. Anita Sharma</Typography>
+                        </Box>
+                        <Box component="div" sx={{ boxSizing: 'border-box', width: '100%', my: 2 }}>
+                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Contract Name</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>CRM Designs</Typography>
+                        </Box>
+                        <Box component="div" sx={{ boxSizing: 'border-box', width: '100%' }}>
+                           <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="CRM Designs" />
+                           <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="React JS" />
+                           <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="React MUI" />
+                           <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="Designs" />
+                           <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="MUI" />
+                           <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="JS" />
+                        </Box>
+                     </Box>
+
+                  </Grid>
+               </PaperWrap>
+            </Grid>
+            <Grid item xs={12} sm={6} md={4} xl={4} xxl={3}>
+               <PaperWrap elevation={0} sx={{ p: 3 }}>
+                  <Grid item xs={12} sx={{ display: 'flex', alignItems: { xs: 'center', lg: 'flex-start' }, flexDirection: 'column' }}>
+
+                     <RedesignCheckbox size="small" sx={{ color: 'sidebar.label' }} />
+                     <CustomChip label="Active" sx={{ position: 'absolute', right: '20px', zIndex: 3, cursor: 'pointer', mt: 0 }} />
+                     {/* <Box sx={{ minWidth: 120 }}>
+                        <FormControl fullWidth>
+                           <InputLabel id="demo-simple-select-label">Status</InputLabel>
+                           <Select
+                              labelId="demo-simple-select-label"
+                              id="demo-simple-select"
+                              value={status}
+                              label="Status"
+                              onChange={handleChange}
+                              sx={{
+                                 backgroundColor: 'primary.light',
+                              }}
+                           >
+                              <MenuItem value={10}>Open</MenuItem>
+                              <MenuItem value={20}>Close</MenuItem>
+                              <MenuItem value={30}>Hold</MenuItem>
+                           </Select>
+                        </FormControl>
+                     </Box> */}
+                     <IconWrap className='iconWrap'>
+                        <CustomSpeedDial
+                           ariaLabel="SpeedDial basic example"
+                           icon={<MoreVertIcon fontSize="small" sx={{ color: 'sidebar.iconText' }} />}
+                           direction="down"
+                           open={true}
+                        >
+                           {actions.map((action) => (
+                              <SpeedDialAction
+                                 key={action.name}
+                                 icon={action.icon}
+                                 tooltipTitle={action.name}
+                                 arrow
+                              />
+                           ))}
+                        </CustomSpeedDial>
+                     </IconWrap>
+
+                     <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '100%' }, pb: 3, position: 'relative', }}>
+                        <NavLink className="projectTitle"><Typography component="div" sx={{ fontWeight: '600', color: 'primary.dark', fontFamily: "'Roboto',sans-serif", fontSize: '15px', pr: '60px' }}>Webethics CRM Designs Webethics CRM Designs Webethics CRM Designs</Typography></NavLink>
+                        <Typography component="div" sx={{ color: 'sidebar.iconText', lineHeight: 1.4, fontSize: '13px', mt: 0.5, fontFamily: "'Roboto',sans-serif", letterSpacing: '0.2px' }}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Typography>
+                     </Box>
+
+                     <Box component="div" sx={{ boxSizing: 'border-box', width: '100%' }}>
+                        <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Categories</Typography>
+                        <Typography component="div" sx={{ color: 'sidebar.iconText', lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>Web Development, RWD Designs, Graphic Designs</Typography>
+                     </Box>
+                     <Box component="div" sx={{ boxSizing: 'border-box', width: '100%', pt: 3, display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+                        <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '50%' } }}>
+                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Client Name</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>Mr. Dallas</Typography>
+                        </Box>
+                        <Box component="div" sx={{ boxSizing: 'border-box', width: { xl: '50%' } }}>
+                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Account ID</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>Mrs. Anita Sharma</Typography>
+                        </Box>
+                        <Box component="div" sx={{ boxSizing: 'border-box', width: '100%', my: 2 }}>
+                           <Typography component="div" sx={{ color: 'sidebar.label', lineHeight: 1.25, fontSize: { xs: '12px', lg: '11px' }, fontWeight: '500', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Contract Name</Typography>
+                           <Typography component="div" sx={{ color: 'sidebar.iconText', fontWeight: 500, lineHeight: 1.25, fontSize: { xs: '13px', lg: '12px' } }}>CRM Designs</Typography>
+                        </Box>
+                        <Box component="div" sx={{ boxSizing: 'border-box', width: '100%' }}>
                            <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="CRM Designs" />
                            <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="React JS" />
                            <CustomChip icon={<CloseIcon sx={{ fontSize: "16px" }} />} label="React MUI" />
