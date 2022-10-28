@@ -69,8 +69,9 @@ const RedesignCheckbox = styled(Checkbox)`
       height:90%;
    }
    &.Mui-checked {
+   border-color: ${props => props.theme.palette.primary.dark};
       &:after {
-         background:rgba(0,0,0,0.12);
+         background:${props => props.theme.palette.primary.dark};
       }
    }
    svg {

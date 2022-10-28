@@ -23,12 +23,14 @@ import Sales from './components/marketing/Sales';
 import Sidebar from './components/common/Sidebar';
 import BottomMenus from './components/common/BottomMenus';
 import Header from './components/common/Header';
-
+import { useLocation } from 'react-router-dom';
 
 function App() {
+  let location = useLocation();
+
   return (
     <ThemeProvider theme={createTheme}>
-      <Box component="div" className="App" sx={{ boxSizing: 'border-box', pt: "120px", pl: { xs: '0', lg: '240px!important' }, pb: { xs: '100px', lg: 0 }, }}>
+      <Box component="div" className="App" sx={{ boxSizing: 'border-box', pt: location.pathname === '/' ? "120px" : "70px", pl: { xs: '0', lg: '240px!important' }, pb: { xs: '100px', lg: 0 }, }}>
         <Header />
         <Sidebar />
         <Layout />
