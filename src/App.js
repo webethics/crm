@@ -30,7 +30,7 @@ function App() {
 
   return (
     <ThemeProvider theme={createTheme}>
-      <Box component="div" className="App" sx={{ boxSizing: 'border-box', pt: location.pathname === '/' ? "120px" : "70px", pl: { xs: '0', lg: '240px!important' }, pb: { xs: '100px', lg: 0 }, }}>
+      <Box component="div" className="App" sx={{ boxSizing: 'border-box', pt: { xs: location.pathname === '/' ? "120px" : "70px", lg: '120px' }, pl: { xs: '0', lg: '240px!important' }, pb: { xs: '100px', lg: 0 }, }}>
         <Header />
         <Sidebar />
         <Layout />
