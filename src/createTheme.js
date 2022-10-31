@@ -50,6 +50,12 @@ const theme = createTheme(
             dark: '#1579a1',
             light: '#c9ebf9'
          },
+         active: {
+            light: '#757ce8',
+            main: '#1579a1',
+            dark: '#1579a1',
+            contrastText: '#fff',
+         },
          sidebar: {
             label: '#acaeb4',
             iconText: '#7a7e9e',

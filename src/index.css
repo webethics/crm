@@ -55,3 +55,29 @@ body {
 .projectTitle {
   text-decoration: none;
 }
+.MuiTablePagination-actions button:not(.Mui-disabled) svg,
+.MuiDataGrid-selectedRowCount,
+.MuiTablePagination-displayedRows,
+.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-row {
+  color:#7a7e9e;
+  text-transform: capitalize;
+}
+.MuiDataGrid-root,
+.MuiDataGrid-footerContainer,
+.MuiDataGrid-columnHeaders,
+.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-row .MuiDataGrid-cell {
+  border-color:rgba(0,0,0,0.12)!important;
+}
+.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-row:hover,
+.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-row.Mui-selected {background-color: #c9ebf9!important; color:#1579a1; cursor: pointer;}
+.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-row .MuiDataGrid-cell:focus,
+.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-row .MuiDataGrid-cell:focus-within,
+.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-row .MuiDataGrid-cellCheckbox span:focus {outline: none!important;}
+.MuiDataGrid-columnHeader .MuiDataGrid-columnHeaderTitle {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #acaeb4;
+  font-family: 'Hind',sans-serif;
+}
