@@ -67,9 +67,13 @@ body {
 .MuiDataGrid-columnHeaders,
 .MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-row .MuiDataGrid-cell {
   border-color:rgba(0,0,0,0.12)!important;
+  border: none!important;
 }
+.MuiDataGrid-columnHeaders {border-bottom: 1px solid rgba(0,0,0,0.12)!important;}
 .MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-row:hover,
-.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-row.Mui-selected {background-color: #c9ebf9!important; color:#1579a1; cursor: pointer;}
+.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-row.Mui-selected {background-color: rgba(171, 173,181,0.17)!important; color:#1579a1; cursor: pointer;}
+.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-columnHeaders .MuiDataGrid-columnHeadersInner .MuiDataGrid-columnHeader:focus,
+.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-columnHeaders .MuiDataGrid-columnHeadersInner .MuiDataGrid-columnHeader:focus-within,
 .MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-row .MuiDataGrid-cell:focus,
 .MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-row .MuiDataGrid-cell:focus-within,
 .MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-row .MuiDataGrid-cellCheckbox span:focus {outline: none!important;}
@@ -78,6 +82,22 @@ body {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.2;
-  color: #acaeb4;
+  color: #000000;
   font-family: 'Hind',sans-serif;
+  margin-top: 4px;
 }
+.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-columnHeaders .MuiDataGrid-columnSeparator svg {color:#1579a1; display: none;}
+
+.MuiTextField-root input[type="text"] {
+  padding-top: 10.5px;
+  padding-bottom: 10.5px;
+}
+.MuiTextField-root label {top: -5px;}
+.MuiTextField-root label.Mui-focused {color: #000000; top:0; font-size: 18px; background-color: #ffffff; padding: 0 8px 0 0;  }
+.MuiTextField-root .MuiInputBase-root:hover fieldset {border-color: rgba(0,0,0,0.12);}
+.MuiTextField-root .MuiInputBase-root .MuiSelect-select {
+  padding-top:10.5px;
+  padding-bottom:10.5px;
+}
+.MuiTextField-root .MuiInputBase-root fieldset {border-color:rgba(0,0,0,0.12);}
+.MuiDataGrid-footerContainer {border-top: none!important;}

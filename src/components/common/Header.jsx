@@ -8,7 +8,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 const Header = () => {
    return (
-      <Box sx={{ boxSizing: 'border-box', position: 'fixed', top: 0, backgroundColor: 'common.white', left: 0, right: 0, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', py: 2, px: 2, zIndex: 9, borderBottom: '1px solid rgba(0, 0, 0, 0.12)' }}>
+      <Box sx={{ boxSizing: 'border-box', position: 'fixed', top: 0, backgroundColor: 'common.white', left: 0, right: 0, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', py: 2, pr: 2, pl: '240px', zIndex: 9, borderBottom: '1px solid rgba(0, 0, 0, 0.12)' }}>
          <Badge badgeContent={0} max={99} color="primary" sx={{ flexDirection: 'column', alignItems: 'center', mx: 2 }}>
             <ShowChartIcon sx={{ color: 'sidebar.iconText', fontSize: '18px' }} />
             <Typography component="div" sx={{ color: 'sidebar.iconText', fontSize: '13px', fontWeight: '500' }}>Sales</Typography>
