@@ -5,6 +5,16 @@ body {
 }
 /* Sidebar Selected Menu Item */
 /* .MuiList-root .MuiListItem-root .MuiButtonBase-root:hover, */
+.sidebar-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 8px 16px;
+  width: 100%;
+  border-radius: 3px;
+  text-decoration:none;
+}
+.sidebar-links.Mui-selected,
 .MuiList-root .MuiListItem-root .MuiButtonBase-root.Mui-selected {
   background: rgba(75, 189, 235, 0.25);
 }
