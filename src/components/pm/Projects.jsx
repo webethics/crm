@@ -1,5 +1,5 @@
-import React from 'react';
-import { Container, Box, Grid, Typography, Checkbox, Tooltip, Button, FormControlLabel, MenuItem, TextField, } from '@mui/material';
+import React, { useState } from 'react';
+import { Container, Box, Grid, Typography, Checkbox, Tooltip, Button, FormControlLabel, MenuItem, TextField, Drawer } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import AddIcon from '@mui/icons-material/Add';
@@ -12,6 +12,7 @@ import DownloadIcon from '@mui/icons-material/Download';
 import PersonIcon from '@mui/icons-material/Person';
 import SearchIcon from '@mui/icons-material/Search';
 import useViewport from '../../utils/useViewport';
+import NewProject from './NewProject';
 
 const ActionIcons = () => {
    const handleEditClick = () => { };
@@ -78,30 +79,30 @@ const ActionIcons = () => {
 };
 
 const rows = [
-   { id: 1, pr_title: 'CRM Designs', pr_client_name: 'Mr. Harsh Vardhan', pr_upwork_account_id: 'Mr. Harsh Vardhan', pr_contract_name: 'CRM Designs', },
-   { id: 2, pr_title: 'Finance Manager', pr_client_name: 'Mr. Kamal Kant', pr_upwork_account_id: 'Ms. Anita Sharma', pr_contract_name: 'Finance App Screens' },
-   { id: 3, pr_title: 'Safe Car', pr_client_name: 'Mr. Harsh Vardhan', pr_upwork_account_id: 'Mr. Sanjay Midha', pr_contract_name: 'React Native App Development' },
-   { id: 4, pr_title: 'Unleashed Strippers', pr_client_name: 'Ms. Mel', pr_upwork_account_id: 'Mr. Rajesh Sharma', pr_contract_name: 'Redesign the website' },
-   { id: 5, pr_title: 'Webethics Solutions', pr_client_name: 'Mr. Dallas', pr_upwork_account_id: 'Mr. Kamal Kant', pr_contract_name: 'RWD website in React JS' },
-   { id: 6, pr_title: 'Auction Marketplace', pr_client_name: 'Mr. Gupta', pr_upwork_account_id: 'Mr. Gupta', pr_contract_name: 'Customer and Client Portal' },
-   { id: 7, pr_title: 'CRM Designs', pr_client_name: 'Mr. Harsh Vardhan', pr_upwork_account_id: 'Mr. Harsh Vardhan', pr_contract_name: 'CRM Designs', },
-   { id: 8, pr_title: 'Finance Manager', pr_client_name: 'Mr. Kamal Kant', pr_upwork_account_id: 'Ms. Anita Sharma', pr_contract_name: 'Finance App Screens' },
-   { id: 9, pr_title: 'Safe Car', pr_client_name: 'Mr. Harsh Vardhan', pr_upwork_account_id: 'Mr. Sanjay Midha', pr_contract_name: 'React Native App Development' },
-   { id: 10, pr_title: 'Unleashed Strippers', pr_client_name: 'Ms. Mel', pr_upwork_account_id: 'Mr. Rajesh Sharma', pr_contract_name: 'Redesign the website' },
-   { id: 11, pr_title: 'Webethics Solutions', pr_client_name: 'Mr. Dallas', pr_upwork_account_id: 'Mr. Kamal Kant', pr_contract_name: 'RWD website in React JS' },
-   { id: 12, pr_title: 'Auction Marketplace', pr_client_name: 'Mr. Gupta', pr_upwork_account_id: 'Mr. Gupta', pr_contract_name: 'Customer and Client Portal' },
-   { id: 13, pr_title: 'CRM Designs', pr_client_name: 'Mr. Harsh Vardhan', pr_upwork_account_id: 'Mr. Harsh Vardhan', pr_contract_name: 'CRM Designs', },
-   { id: 14, pr_title: 'Finance Manager', pr_client_name: 'Mr. Kamal Kant', pr_upwork_account_id: 'Ms. Anita Sharma', pr_contract_name: 'Finance App Screens' },
-   { id: 15, pr_title: 'Safe Car', pr_client_name: 'Mr. Harsh Vardhan', pr_upwork_account_id: 'Mr. Sanjay Midha', pr_contract_name: 'React Native App Development' },
-   { id: 16, pr_title: 'Unleashed Strippers', pr_client_name: 'Ms. Mel', pr_upwork_account_id: 'Mr. Rajesh Sharma', pr_contract_name: 'Redesign the website' },
-   { id: 17, pr_title: 'Webethics Solutions', pr_client_name: 'Mr. Dallas', pr_upwork_account_id: 'Mr. Kamal Kant', pr_contract_name: 'RWD website in React JS' },
-   { id: 18, pr_title: 'Auction Marketplace', pr_client_name: 'Mr. Gupta', pr_upwork_account_id: 'Mr. Gupta', pr_contract_name: 'Customer and Client Portal' },
-   { id: 19, pr_title: 'CRM Designs', pr_client_name: 'Mr. Harsh Vardhan', pr_upwork_account_id: 'Mr. Harsh Vardhan', pr_contract_name: 'CRM Designs', },
-   { id: 20, pr_title: 'Finance Manager', pr_client_name: 'Mr. Kamal Kant', pr_upwork_account_id: 'Ms. Anita Sharma', pr_contract_name: 'Finance App Screens' },
-   { id: 21, pr_title: 'Safe Car', pr_client_name: 'Mr. Harsh Vardhan', pr_upwork_account_id: 'Mr. Sanjay Midha', pr_contract_name: 'React Native App Development' },
-   { id: 22, pr_title: 'Unleashed Strippers', pr_client_name: 'Ms. Mel', pr_upwork_account_id: 'Mr. Rajesh Sharma', pr_contract_name: 'Redesign the website' },
-   { id: 23, pr_title: 'Webethics Solutions', pr_client_name: 'Mr. Dallas', pr_upwork_account_id: 'Mr. Kamal Kant', pr_contract_name: 'RWD website in React JS' },
-   { id: 24, pr_title: 'Auction Marketplace', pr_client_name: 'Mr. Gupta', pr_upwork_account_id: 'Mr. Gupta', pr_contract_name: 'Customer and Client Portal' },
+   { id: 1, pr_title: 'CRM Designs', pr_client_name: 'Mr. Harsh Vardhan', pr_upwork_account_id: 'Mr. Harsh Vardhan', pr_contract_name: 'CRM Designs', pr_status: 'open' },
+   { id: 2, pr_title: 'Finance Manager', pr_client_name: 'Mr. Kamal Kant', pr_upwork_account_id: 'Ms. Anita Sharma', pr_contract_name: 'Finance App Screens', pr_status: 'close' },
+   { id: 3, pr_title: 'Safe Car', pr_client_name: 'Mr. Harsh Vardhan', pr_upwork_account_id: 'Mr. Sanjay Midha', pr_contract_name: 'React Native App Development', pr_status: 'hold' },
+   { id: 4, pr_title: 'Unleashed Strippers', pr_client_name: 'Ms. Mel', pr_upwork_account_id: 'Mr. Rajesh Sharma', pr_contract_name: 'Redesign the website', pr_status: 'open' },
+   { id: 5, pr_title: 'Webethics Solutions', pr_client_name: 'Mr. Dallas', pr_upwork_account_id: 'Mr. Kamal Kant', pr_contract_name: 'RWD website in React JS', pr_status: 'open' },
+   { id: 6, pr_title: 'Auction Marketplace', pr_client_name: 'Mr. Gupta', pr_upwork_account_id: 'Mr. Gupta', pr_contract_name: 'Customer and Client Portal', pr_status: 'hold' },
+   { id: 7, pr_title: 'CRM Designs', pr_client_name: 'Mr. Harsh Vardhan', pr_upwork_account_id: 'Mr. Harsh Vardhan', pr_contract_name: 'CRM Designs', pr_status: 'close' },
+   { id: 8, pr_title: 'Finance Manager', pr_client_name: 'Mr. Kamal Kant', pr_upwork_account_id: 'Ms. Anita Sharma', pr_contract_name: 'Finance App Screens', pr_status: 'close' },
+   { id: 9, pr_title: 'Safe Car', pr_client_name: 'Mr. Harsh Vardhan', pr_upwork_account_id: 'Mr. Sanjay Midha', pr_contract_name: 'React Native App Development', pr_status: 'open' },
+   { id: 10, pr_title: 'Unleashed Strippers', pr_client_name: 'Ms. Mel', pr_upwork_account_id: 'Mr. Rajesh Sharma', pr_contract_name: 'Redesign the website', pr_status: 'open' },
+   { id: 11, pr_title: 'Webethics Solutions', pr_client_name: 'Mr. Dallas', pr_upwork_account_id: 'Mr. Kamal Kant', pr_contract_name: 'RWD website in React JS', pr_status: 'hold' },
+   { id: 12, pr_title: 'Auction Marketplace', pr_client_name: 'Mr. Gupta', pr_upwork_account_id: 'Mr. Gupta', pr_contract_name: 'Customer and Client Portal', pr_status: 'open' },
+   { id: 13, pr_title: 'CRM Designs', pr_client_name: 'Mr. Harsh Vardhan', pr_upwork_account_id: 'Mr. Harsh Vardhan', pr_contract_name: 'CRM Designs', pr_status: 'open' },
+   { id: 14, pr_title: 'Finance Manager', pr_client_name: 'Mr. Kamal Kant', pr_upwork_account_id: 'Ms. Anita Sharma', pr_contract_name: 'Finance App Screens', pr_status: 'open' },
+   { id: 15, pr_title: 'Safe Car', pr_client_name: 'Mr. Harsh Vardhan', pr_upwork_account_id: 'Mr. Sanjay Midha', pr_contract_name: 'React Native App Development', pr_status: 'close' },
+   { id: 16, pr_title: 'Unleashed Strippers', pr_client_name: 'Ms. Mel', pr_upwork_account_id: 'Mr. Rajesh Sharma', pr_contract_name: 'Redesign the website', pr_status: 'close' },
+   { id: 17, pr_title: 'Webethics Solutions', pr_client_name: 'Mr. Dallas', pr_upwork_account_id: 'Mr. Kamal Kant', pr_contract_name: 'RWD website in React JS', pr_status: 'hold' },
+   { id: 18, pr_title: 'Auction Marketplace', pr_client_name: 'Mr. Gupta', pr_upwork_account_id: 'Mr. Gupta', pr_contract_name: 'Customer and Client Portal', pr_status: 'hold' },
+   { id: 19, pr_title: 'CRM Designs', pr_client_name: 'Mr. Harsh Vardhan', pr_upwork_account_id: 'Mr. Harsh Vardhan', pr_contract_name: 'CRM Designs', pr_status: 'open' },
+   { id: 20, pr_title: 'Finance Manager', pr_client_name: 'Mr. Kamal Kant', pr_upwork_account_id: 'Ms. Anita Sharma', pr_contract_name: 'Finance App Screens', pr_status: 'open' },
+   { id: 21, pr_title: 'Safe Car', pr_client_name: 'Mr. Harsh Vardhan', pr_upwork_account_id: 'Mr. Sanjay Midha', pr_contract_name: 'React Native App Development', pr_status: 'open' },
+   { id: 22, pr_title: 'Unleashed Strippers', pr_client_name: 'Ms. Mel', pr_upwork_account_id: 'Mr. Rajesh Sharma', pr_contract_name: 'Redesign the website', pr_status: 'open' },
+   { id: 23, pr_title: 'Webethics Solutions', pr_client_name: 'Mr. Dallas', pr_upwork_account_id: 'Mr. Kamal Kant', pr_contract_name: 'RWD website in React JS', pr_status: 'open' },
+   { id: 24, pr_title: 'Auction Marketplace', pr_client_name: 'Mr. Gupta', pr_upwork_account_id: 'Mr. Gupta', pr_contract_name: 'Customer and Client Portal', pr_status: 'open' },
 ];
 
 const RedesignCheckbox = styled(Checkbox)`
@@ -131,12 +132,14 @@ const RedesignCheckbox = styled(Checkbox)`
 
 const Projects = () => {
    const { width } = useViewport();
+   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
    const columns = [
       {
          field: 'pr_title', headerName: 'Project Title', width: width > 1800 ? 400 : width > 1440 ? 300 : 225, sortable: false, hideable: false,
          renderCell: (params) => (
             <Typography component="div" variant="" sx={{}}>
-               <Typography component="span" variant="body2" sx={{ display: 'block' }}> {params.value}</Typography>
+               <Typography component="span" variant="body2" sx={{ display: 'block' }}> {params.value} <Typography component="span" variant="body2" sx={{ display: 'inline-block', fontSize: '12px', color: 'sidebar.label', letterSpacing: '0.5px' }}>(10)</Typography></Typography>
                <Typography component="span" variant="body2" sx={{ display: 'block', fontSize: '12px', color: 'sidebar.label', letterSpacing: '0.5px' }}> 17/Oct/2022 - 17/Nov/2022</Typography>
             </Typography>
          ),
@@ -144,6 +147,7 @@ const Projects = () => {
       { field: 'pr_client_name', headerName: 'Client Name', width: width > 1800 ? 250 : width > 1440 ? 175 : 180, sortable: false },
       { field: 'pr_upwork_account_id', headerName: 'Upwork Account ID', width: width > 1800 ? 250 : width > 1440 ? 175 : 175, sortable: false },
       { field: 'pr_contract_name', headerName: 'Contract Name', width: width > 1800 ? 250 : width > 1440 ? 225 : 225, sortable: false },
+      { field: 'pr_status', headerName: 'Status', width: width > 1800 ? 75 : width > 1440 ? 75 : 75, sortable: false, hide: true },
       {
          field: 'pr_actions', headerName: 'Actions', width: width > 1800 ? 150 : 150, sortable: false,
          renderCell: () => {
@@ -158,6 +162,7 @@ const Projects = () => {
          }
       },
    ];
+
 
    return (
       <Container sx={{ maxWidth: { xs: 'initial' }, pt: { xs: '25px', lg: 0 }, px: 0 }}>
@@ -177,7 +182,7 @@ const Projects = () => {
                </Box>
 
                <Box sx={{ '& .MuiTextField-root': { mr: 1, width: '15ch' } }}>
-                  <TextField label="Status" select>
+                  <TextField label="Status" select defaultValue="">
                      <MenuItem value='open'>Open</MenuItem>
                      <MenuItem value='close'>Close</MenuItem>
                      <MenuItem value='hold'>Hold</MenuItem>
@@ -185,7 +190,7 @@ const Projects = () => {
                </Box>
 
                <Box sx={{ '& .MuiTextField-root': { mr: 1, width: '15ch' } }}>
-                  <TextField label="Category" select>
+                  <TextField label="Category" select defaultValue="">
                      <MenuItem value='react-js'>React JS</MenuItem>
                      <MenuItem value='laraval'>Laraval</MenuItem>
                      <MenuItem value='php'>PHP</MenuItem>
@@ -193,13 +198,14 @@ const Projects = () => {
                </Box>
 
                <Box sx={{ '& .MuiTextField-root': { m: 0, width: '15ch' } }}>
-                  <TextField label="Clients" select>
+                  <TextField label="Clients" select defaultValue="">
                      <MenuItem value='dallas'>Mr. Dallas</MenuItem>
                      <MenuItem value='melissa'>Mr. Mellisa</MenuItem>
                   </TextField>
                </Box>
             </Box>
-            <Button variant="contained" startIcon={<AddIcon sx={{ fontSize: "16px" }} />} color="active">
+
+            <Button variant="contained" startIcon={<AddIcon sx={{ fontSize: "16px" }} />} color="active" onClick={() => setIsDrawerOpen(true)}>
                Projects
             </Button>
          </Box>
@@ -209,9 +215,14 @@ const Projects = () => {
                components={{
                   BaseCheckbox: RedesignCheckbox,
                }}
+               getRowClassName={(params) => `super-app-theme--${params.row.pr_status} spaceVertial`}
             />
-         </Grid >
-      </Container >
+         </Grid>
+
+         <Drawer variant="temporary" anchor="right" open={isDrawerOpen} onClose={() => setIsDrawerOpen(false)}>
+            <NewProject />
+         </Drawer>
+      </Container>
    )
 }
 

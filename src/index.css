@@ -4,7 +4,6 @@ body {
   /* background-color: #e0e0e0; */
 }
 /* Sidebar Selected Menu Item */
-/* .MuiList-root .MuiListItem-root .MuiButtonBase-root:hover, */
 .sidebar-links {
   display: flex;
   flex-wrap: wrap;
@@ -111,3 +110,16 @@ body {
 }
 .MuiTextField-root .MuiInputBase-root fieldset {border-color:rgba(0,0,0,0.12);}
 .MuiDataGrid-footerContainer {border-top: none!important;}
+
+.MuiDataGrid-main .MuiDataGrid-virtualScrollerRenderZone .MuiDataGrid-row.super-app-theme--open {
+    border-left: 2px solid #ffa726;
+}
+.MuiDataGrid-main .MuiDataGrid-virtualScrollerRenderZone .MuiDataGrid-row.super-app-theme--close {
+    border-left: 2px solid #4db6ac;
+}
+.MuiDataGrid-main .MuiDataGrid-virtualScrollerRenderZone .MuiDataGrid-row.super-app-theme--hold {
+    border-left: 2px solid #ef5350;
+}
+.spaceVertial {
+  margin-bottom: 8px;
+}

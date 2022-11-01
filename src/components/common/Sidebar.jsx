@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-// import MenuIcon from '@mui/icons-material/Menu';
-// import { IconButton} from '@mui/material';
 import { Drawer, Box, Typography, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Avatar, Badge, Switch, ListItemAvatar, Tooltip } from '@mui/material';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize';
 import PeopleIcon from '@mui/icons-material/People';
@@ -40,11 +38,6 @@ const Sidebar = () => {
 
    return (
       <>
-         {/* Sidebar Toggle Icon */}
-         {/* <IconButton size="large" edge="start" color="inherit" aria-label="logo" onClick={() => setIsDrawerOpen(true)}>
-            <MenuIcon />
-         </IconButton> */}
-
          <Drawer hideBackdrop variant="permanent" anchor="left" open={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} sx={{ display: { xs: "none", lg: "flex" } }}>
             <Box px={2} sx={{ width: "225px", maxWidth: "100%", minWidth: "225px", flex: 1, boxSizing: "border-box" }} role="presentation" display="flex" flexWrap="wrap" flexDirection="column">
                {/* Sidebar Logo */}
