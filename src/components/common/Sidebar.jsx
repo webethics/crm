@@ -60,7 +60,7 @@ const Sidebar = () => {
                      </Typography>
                   </ListItem>
                   <ListItem disablePadding>
-                     <NavLink to='/' onClick={() => handleListItemClick(0)} className={`${selectedIndex === 0 ? 'Mui-selected' : ''} MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-11sxtjm-MuiButtonBase-root-MuiListItemButton-root`}>
+                     <NavLink to='/' onClick={() => handleListItemClick(0)} className={`${selectedIndex === 0 ? 'Mui-selected' : ''} MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-11sxtjm-MuiButtonBase-root-MuiListItemButton-root`} sx={{ width: '100%', padding: '8px 16px', borderRadius: '3px', textDecoration: 'none' }}>
                         <ListItemIcon sx={{ minWidth: "30px" }}>
                            <DashboardCustomizeIcon fontSize="small" sx={{ color: selectedIndex === 0 ? 'primary.dark' : 'sidebar.iconText' }} />
                         </ListItemIcon>
@@ -85,7 +85,7 @@ const Sidebar = () => {
                      </Typography>
                   </ListItem>
                   <ListItem disablePadding>
-                     <NavLink to='/projects' onClick={() => handleListItemClick(7)} className={`${selectedIndex === 7 ? 'Mui-selected' : ''} MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-11sxtjm-MuiButtonBase-root-MuiListItemButton-root`}>
+                     <NavLink to='/projects' onClick={() => handleListItemClick(7)} className={`${selectedIndex === 7 ? 'Mui-selected' : ''} MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-11sxtjm-MuiButtonBase-root-MuiListItemButton-root`} sx={{ width: '100%', padding: '8px 16px', borderRadius: '3px', textDecoration: 'none' }}>
                         <ListItemIcon sx={{ minWidth: "30px" }}>
                            <Tooltip title="" placement="right" arrow>
                               <FolderCopyIcon fontSize="small" sx={{ color: selectedIndex === 7 ? 'primary.dark' : 'sidebar.iconText' }} />
