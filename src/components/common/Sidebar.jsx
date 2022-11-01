@@ -34,6 +34,7 @@ const Sidebar = () => {
       setSelectedIndex(index);
    };
 
+
    const handleClick = () => {
       setOpenProfile(!openProfile);
    };
