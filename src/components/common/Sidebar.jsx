@@ -16,7 +16,7 @@ import HelpCenterIcon from '@mui/icons-material/HelpCenter';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import EditIcon from '@mui/icons-material/Edit';
 
-import Logo from '../../assets/images/logo.svg';
+// import Logo from '../../assets/images/logo.svg';
 import Owner from '../../assets/images/owner.png';
 
 import Collapse from '@mui/material/Collapse';
@@ -41,13 +41,12 @@ const Sidebar = () => {
          <Drawer hideBackdrop variant="permanent" anchor="left" open={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} sx={{ display: { xs: "none", lg: "flex" } }}>
             <Box px={2} sx={{ width: "225px", maxWidth: "100%", minWidth: "225px", flex: 1, boxSizing: "border-box" }} role="presentation" display="flex" flexWrap="wrap" flexDirection="column">
                {/* Sidebar Logo */}
-               <Avatar alt="Remy Sharp" src={Logo} variant="rounded" sx={{ pt: 2, pb: 1, width: "100%", display: "flex", height: 'auto', position: 'sticky', top: 0, zIndex: 9, background: 'white' }} />
+               {/* <Avatar alt="Remy Sharp" src={Logo} variant="rounded" sx={{ pt: 2, pb: 1, width: "100%", display: "flex", height: 'auto', position: 'sticky', top: 0, zIndex: 9, background: 'white' }} /> */}
 
-               {/* Sidebar Menus */}
                {/* Analytics */}
                <List className="sidebar-menus" component="nav" sx={{ pt: 0, pb: 2, width: '100%', flex: 1 }}>
                   <ListItem disablePadding>
-                     <Typography variant="h6" component="div" sx={{ px: 2, pb: 2, pt: 5, width: "100%", lineHeight: "inherit" }}>
+                     <Typography variant="h6" component="div" sx={{ px: 2, py: 2, width: "100%", lineHeight: "inherit" }}>
                         <Typography variant="h6" component="div" sx={{ textTransform: "uppercase", fontSize: "10px", color: "sidebar.label", letterSpacing: 1 }}>Analytics</Typography>
                      </Typography>
                   </ListItem>
@@ -71,7 +70,7 @@ const Sidebar = () => {
                   </ListItem>
 
                   {/* Project Management */}
-                  <ListItem disablePadding>
+                  {/* <ListItem disablePadding>
                      <Typography variant="h6" component="div" sx={{ px: 2, pb: 2, pt: 5, width: "100%" }}>
                         <Typography variant="h6" component="div" sx={{ textTransform: "uppercase", fontSize: "10px", color: "sidebar.label", letterSpacing: 1 }}>Project Management</Typography>
                      </Typography>
@@ -115,10 +114,10 @@ const Sidebar = () => {
                         </ListItemIcon>
                         <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 10 ? 'primary.dark' : 'sidebar.iconText' }}>Credentials</Typography>} sx={{ pt: "2px", m: 0 }} />
                      </ListItemButton>
-                  </ListItem>
+                  </ListItem> */}
 
                   {/* HR Management */}
-                  <ListItem disablePadding>
+                  {/* <ListItem disablePadding>
                      <Typography variant="h6" component="div" sx={{ px: 2, pb: 2, pt: 5, width: "100%" }}>
                         <Typography variant="h6" component="div" sx={{ textTransform: "uppercase", fontSize: "10px", color: "sidebar.label", letterSpacing: 1 }}>HR Management</Typography>
                      </Typography>
@@ -152,11 +151,11 @@ const Sidebar = () => {
                         </ListItemIcon>
                         <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 13 ? 'primary.dark' : 'sidebar.iconText' }}>Employees</Typography>} sx={{ pt: "2px", m: 0 }} />
                      </ListItemButton>
-                  </ListItem>
+                  </ListItem> */}
 
 
                   {/* Marketing */}
-                  <ListItem disablePadding>
+                  {/* <ListItem disablePadding>
                      <Typography variant="h6" component="div" sx={{ px: 2, pb: 2, pt: 5, width: "100%" }}>
                         <Typography variant="h6" component="div" sx={{ textTransform: "uppercase", fontSize: "10px", color: "sidebar.label", letterSpacing: 1 }}>Marketing</Typography>
                      </Typography>
@@ -170,7 +169,7 @@ const Sidebar = () => {
                         </ListItemIcon>
                         <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 14 ? 'primary.dark' : 'sidebar.iconText' }}>Sales</Typography>} sx={{ pt: "2px", m: 0 }} />
                      </ListItemButton>
-                  </ListItem>
+                  </ListItem> */}
                </List>
 
                <List component="nav" sx={{ pt: 2, pb: "5px", marginTop: 'auto', width: "calc(100% + 32px)", marginLeft: "-16px", position: 'sticky', bottom: 0, zIndex: 9, background: 'white', borderTop: '1px solid rgba(0, 0, 0, 0.12)' }}>

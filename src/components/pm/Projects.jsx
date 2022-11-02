@@ -166,15 +166,16 @@ const Projects = () => {
 
    return (
       <Container sx={{ maxWidth: { xs: 'initial' }, pt: { xs: '25px', lg: 0 }, px: 0 }}>
-         <Typography variant="h1" component="h1" sx={{ color: 'common.black', mb: 0, fontFamily: "'Hind', sans-serif", mb: 2, px: 2 }}>Projects</Typography>
+         <Typography variant="h1" component="h1" sx={{ color: 'common.black', mb: 0, fontFamily: "'Hind', sans-serif", mb: 2 }}>Projects</Typography>
 
-         <Box sx={{ pr: 2, mx: 2, mb: 2, display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end', justifyContent: 'space-between' }}>
+         <Box sx={{ mb: 2, display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end', justifyContent: 'space-between' }}>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end' }}>
 
                <Box sx={{ display: 'inline-flex', mr: 1 }}>
                   <TextField
                      label="Search projects"
                      id="outlined-start-adornment"
+                     size="small"
                      InputProps={{
                         endAdornment: <SearchIcon sx={{ fontSize: '18px' }} />,
                      }}
@@ -182,7 +183,7 @@ const Projects = () => {
                </Box>
 
                <Box sx={{ '& .MuiTextField-root': { mr: 1, width: '15ch' } }}>
-                  <TextField label="Status" select defaultValue="">
+                  <TextField label="Status" select defaultValue="" size="small">
                      <MenuItem value='open'>Open</MenuItem>
                      <MenuItem value='close'>Close</MenuItem>
                      <MenuItem value='hold'>Hold</MenuItem>
@@ -190,7 +191,7 @@ const Projects = () => {
                </Box>
 
                <Box sx={{ '& .MuiTextField-root': { mr: 1, width: '15ch' } }}>
-                  <TextField label="Category" select defaultValue="">
+                  <TextField label="Category" select size="small" defaultValue="">
                      <MenuItem value='react-js'>React JS</MenuItem>
                      <MenuItem value='laraval'>Laraval</MenuItem>
                      <MenuItem value='php'>PHP</MenuItem>
@@ -198,7 +199,7 @@ const Projects = () => {
                </Box>
 
                <Box sx={{ '& .MuiTextField-root': { m: 0, width: '15ch' } }}>
-                  <TextField label="Clients" select defaultValue="">
+                  <TextField label="Clients" select size="small" defaultValue="">
                      <MenuItem value='dallas'>Mr. Dallas</MenuItem>
                      <MenuItem value='melissa'>Mr. Mellisa</MenuItem>
                   </TextField>
@@ -210,8 +211,8 @@ const Projects = () => {
             </Button>
          </Box>
 
-         <Grid container spacing={2} sx={{ px: { xs: 2 }, height: 'calc(100vh - 225px)', mt: 0 }}>
-            <DataGrid sx={{ mx: 2 }} rowHeight={50} rows={rows} columns={columns} disableColumnFilter checkboxSelection disableColumnMenu pageSize={15} rowsPerPageOptions={[15]}
+         <Grid container spacing={2} sx={{ height: 'calc(100vh - 225px)', mt: 0, ml: 0, width: '100%' }}>
+            <DataGrid rowHeight={50} rows={rows} columns={columns} disableColumnFilter checkboxSelection disableColumnMenu pageSize={15} rowsPerPageOptions={[15]}
                components={{
                   BaseCheckbox: RedesignCheckbox,
                }}

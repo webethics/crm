@@ -51,7 +51,7 @@ const Dashboard = () => {
    ];
 
    return (
-      <Container sx={{ maxWidth: { xs: 'initial' }, pt: { xs: '25px', lg: 0 }, px: 0 }}>
+      <Container sx={{ maxWidth: { xs: 'initial' }, pt: { xs: '25px', lg: 0 } }}>
          <TabContext value={value}>
             <Box sx={{ width: '100%', bgcolor: 'primary.dark', position: 'fixed', top: '70px', left: 0, right: 0, zIndex: 9, display: { lg: 'none' } }}>
                <TabList variant="scrollable" scrollButtons allowScrollButtonsMobile onChange={handleChange} aria-label="lab API tabs example" sx={{ px: 2 }}>
@@ -60,7 +60,7 @@ const Dashboard = () => {
                   <Tab label="Marketing" value='3' sx={{ color: 'common.white', textTransform: 'capitalize', fontWeight: '400' }} />
                </TabList>
             </Box>
-            <Typography variant="h1" component="h1" sx={{ color: 'primary.dark', px: 2, mb: 0, fontFamily: "'Hind', sans-serif" }}>Dashboard</Typography>
+            <Typography variant="h1" component="h1" sx={{ color: 'common.black', mb: 0, fontFamily: "'Hind', sans-serif" }}>Dashboard</Typography>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', width: '100%' }}>
                <TabPanel value={width > breakpoint ? "1" : '1'} sx={{ px: { xs: 2, xl: 2 }, width: { xs: '100%', lg: 'calc(50% - 32px)', xl: 'calc(33.333% - 32px)' } }}>
                   <Typography variant="h2" component="div" sx={{ color: 'sidebar.label', fontFamily: "'Hind', sans-serif" }}>Project Management</Typography>

@@ -31,7 +31,7 @@ body {
   height: 0px;  
 }
 .MuiList-root .MuiListItem-root .MuiButtonBase-root:not(.Mui-selected):hover {
-  background: transparent;
+  /* background: transparent; */
 }
 .MuiList-root .MuiListItem-root .MuiButtonBase-root:hover .MuiListItemText-root span,
 .MuiList-root .MuiListItem-root .MuiButtonBase-root:hover .MuiSvgIcon-root {
@@ -96,19 +96,6 @@ body {
   margin-top: 4px;
 }
 .MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-columnHeaders .MuiDataGrid-columnSeparator svg {color:#1579a1; display: none;}
-
-.MuiTextField-root input[type="text"] {
-  padding-top: 10.5px;
-  padding-bottom: 10.5px;
-}
-.MuiTextField-root label {top: -5px;}
-.MuiTextField-root label.Mui-focused {color: #000000; top:0; font-size: 18px; background-color: #ffffff; padding: 0 8px 0 0;  }
-.MuiTextField-root .MuiInputBase-root:hover fieldset {border-color: rgba(0,0,0,0.12);}
-.MuiTextField-root .MuiInputBase-root .MuiSelect-select {
-  padding-top:10.5px;
-  padding-bottom:10.5px;
-}
-.MuiTextField-root .MuiInputBase-root fieldset {border-color:rgba(0,0,0,0.12);}
 .MuiDataGrid-footerContainer {border-top: none!important;}
 
 .MuiDataGrid-main .MuiDataGrid-virtualScrollerRenderZone .MuiDataGrid-row.super-app-theme--open {
@@ -123,3 +110,53 @@ body {
 .spaceVertial {
   margin-bottom: 8px;
 }
+#status label button .MuiButton-startIcon {margin: 0;}
+#status label button:hover {border: none; background:transparent;}
+#status .MuiFormControlLabel-label {
+  padding: 16px;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+#status .MuiFormControlLabel-label:hover {
+  background-color: #1579a1;
+  color:#ffffff;
+}
+#status .MuiFormControlLabel-label button {transition: none;}
+#status .MuiFormControlLabel-label:hover button svg,
+#status .MuiFormControlLabel-label:hover button {color:#ffffff;}
+#status label .MuiRadio-root.Mui-checked ~ span {
+  background-color: #1579a1;
+}
+#status label .MuiRadio-root.Mui-checked ~ span button svg,
+#status label .MuiRadio-root.Mui-checked ~ span button {color:#ffffff;}
+/* .MuiAutocomplete-popper {
+  z-index: 999999 !important;
+} */
+
+/* .MuiTextField-root input[type="text"] {
+  padding-top: 10.5px;
+  padding-bottom: 10.5px;
+}
+.MuiTextField-root label {top: -5px;}
+.MuiTextField-root label.Mui-focused {color: #000000; top:0; font-size: 18px; background-color: #ffffff; padding: 0 8px 0 0;  }
+.MuiTextField-root .MuiInputBase-root:hover fieldset {border-color: rgba(0,0,0,0.12);}
+.MuiTextField-root .MuiInputBase-root .MuiSelect-select {
+  padding-top:10.5px;
+  padding-bottom:10.5px;
+}
+.MuiTextField-root .MuiInputBase-root fieldset {border-color:rgba(0,0,0,0.12);} */
+
+.MuiAutocomplete-root .MuiInputBase-root .MuiButtonBase-root {
+  height: 24px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.MuiAutocomplete-root .MuiInputBase-root .MuiButtonBase-root .MuiChip-label {padding-left: 10px; padding-right: 2px;}
+.MuiAutocomplete-root .MuiInputBase-root .MuiButtonBase-root svg {margin-right: 2px; margin-left: 2px;}
+.tox-tinymce {
+  border: 1px solid rgba(0,0,0,0.23)!important;
+  border-radius: 4px!important;
+}
+.tox .tox-statusbar {border-top-color:  rgba(0,0,0,0.23)!important;}
+.tox:not(.tox-tinymce-inline) .tox-editor-header {box-shadow: none!important; border-bottom: 1px solid rgba(0,0,0,0.23)!important;}
