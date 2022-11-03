@@ -62,19 +62,19 @@ const Dashboard = () => {
             </Box>
             <Typography variant="h1" component="h1" sx={{ color: 'common.black', mb: 0, fontFamily: "'Hind', sans-serif" }}>Dashboard</Typography>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', width: '100%' }}>
-               <TabPanel value={width > breakpoint ? "1" : '1'} sx={{ px: { xs: 2, xl: 2 }, width: { xs: '100%', lg: 'calc(50% - 32px)', xl: 'calc(33.333% - 32px)' } }}>
+               <TabPanel value={width > breakpoint ? "1" : '1'} sx={{ pr: { xs: 1, xl: 6 }, pl: 0, width: { xs: '100%', lg: 'calc(50% - 8px)', xl: 'calc(33.333% - 32px)' } }}>
                   <Typography variant="h2" component="div" sx={{ color: 'sidebar.label', fontFamily: "'Hind', sans-serif" }}>Project Management</Typography>
                   <Grid container spacing={2}>
                      <DashboardListLayout data={projectData} />
                   </Grid>
                </TabPanel>
-               <TabPanel value={width > breakpoint ? "1" : '2'} sx={{ px: { xs: 2, xl: 2 }, width: { xs: '100%', lg: 'calc(50% - 32px)', xl: 'calc(33.333% - 32px)' } }}>
+               <TabPanel value={width > breakpoint ? "1" : '2'} sx={{ pr: { xs: 0, xl: 6 }, pl: { xs: 1, xl: 0 }, width: { xs: '100%', lg: 'calc(50% - 8px)', xl: 'calc(33.333% - 32px)' } }}>
                   <Typography variant="h2" component="div" sx={{ color: 'sidebar.label', fontFamily: "'Hind', sans-serif" }}>HR Management</Typography>
                   <Grid container spacing={2}>
                      <DashboardListLayout data={hrData} />
                   </Grid>
                </TabPanel>
-               <TabPanel value={width > breakpoint ? "1" : '3'} sx={{ px: { xs: 2, xl: 2 }, width: { xs: '100%', lg: '100%', xl: 'calc(33.333% - 32px)' } }}>
+               <TabPanel value={width > breakpoint ? "1" : '3'} sx={{ pr: { xs: 0, xl: 0 }, pl: 0, width: { xs: '100%', lg: '100%', xl: 'calc(33.333% - 32px)' } }}>
                   <Typography variant="h2" component="div" sx={{ color: 'sidebar.label', fontFamily: "'Hind', sans-serif" }}>Marketing</Typography>
                   <Grid container spacing={2}>
                      <DashboardListLayout data={leadData} />

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Box, Grid, Typography, Checkbox, Tooltip, Button, FormControlLabel, MenuItem, TextField, Drawer } from '@mui/material';
+import { Chip, Container, Box, Grid, Typography, Checkbox, Tooltip, Button, FormControlLabel, MenuItem, TextField, Drawer } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import AddIcon from '@mui/icons-material/Add';
@@ -19,7 +19,7 @@ const ActionIcons = () => {
    return (
       <>
          <FormControlLabel
-            sx={{ ml: 0, mr: 0.5 }}
+            sx={{ ml: 0, mr: 1 }}
             control={
                <Tooltip title="View Details" arrow placement="top">
                   <VisibilityIcon sx={{ color: 'sidebar.iconText', fontSize: '16px' }} onClick={handleEditClick(1)} />
@@ -27,7 +27,7 @@ const ActionIcons = () => {
             }
          />
          <FormControlLabel
-            sx={{ ml: 0, mr: 0.5 }}
+            sx={{ ml: 0, mr: 1 }}
             control={
                <Tooltip title="Edit Details" arrow placement="top">
                   <CreateIcon sx={{ color: 'sidebar.iconText', fontSize: '16px' }} onClick={handleEditClick(1)} />
@@ -35,7 +35,7 @@ const ActionIcons = () => {
             }
          />
          <FormControlLabel
-            sx={{ ml: 0, mr: 0.5 }}
+            sx={{ ml: 0, mr: 1 }}
             control={
                <Tooltip title="Favorite" arrow placement="top">
                   <FavoriteIcon sx={{ color: 'sidebar.iconText', fontSize: '16px' }} onClick={handleEditClick(2)} />
@@ -43,7 +43,7 @@ const ActionIcons = () => {
             }
          />
          <FormControlLabel
-            sx={{ ml: 0, mr: 0.5 }}
+            sx={{ ml: 0, mr: 1 }}
             control={
                <Tooltip title="Mr. Harsh Vardhan" arrow placement="top">
                   <PersonIcon sx={{ color: 'sidebar.iconText', fontSize: '16px' }} onClick={handleEditClick(3)} />
@@ -51,7 +51,7 @@ const ActionIcons = () => {
             }
          />
          <FormControlLabel
-            sx={{ ml: 0, mr: 0.5 }}
+            sx={{ ml: 0, mr: 1 }}
             control={
                <Tooltip title="Chat" arrow placement="top">
                   <ChatIcon sx={{ color: 'sidebar.iconText', fontSize: '16px' }} onClick={handleEditClick(4)} />
@@ -59,7 +59,7 @@ const ActionIcons = () => {
             }
          />
          <FormControlLabel
-            sx={{ ml: 0, mr: 0.5 }}
+            sx={{ ml: 0, mr: 1 }}
             control={
                <Tooltip title="Download Attachments" arrow placement="top">
                   <DownloadIcon sx={{ color: 'sidebar.iconText', fontSize: '16px' }} onClick={handleEditClick(5)} />
@@ -67,7 +67,7 @@ const ActionIcons = () => {
             }
          />
          <FormControlLabel
-            sx={{ ml: 0, mr: 0.5 }}
+            sx={{ ml: 0, mr: 1 }}
             control={
                <Tooltip title="Delete" arrow placement="top">
                   <DeleteIcon sx={{ color: 'sidebar.iconText', fontSize: '16px' }} onClick={handleEditClick(6)} />
@@ -136,7 +136,7 @@ const Projects = () => {
 
    const columns = [
       {
-         field: 'pr_title', headerName: 'Project Title', width: width > 1800 ? 400 : width > 1440 ? 300 : 225, sortable: false, hideable: false,
+         field: 'pr_title', headerName: 'Project Title', width: width > 1800 ? 350 : width > 1440 ? 300 : 225, sortable: false, hideable: false,
          renderCell: (params) => (
             <Typography component="div" variant="" sx={{}}>
                <Typography component="span" variant="body2" sx={{ display: 'block' }}> {params.value} <Typography component="span" variant="body2" sx={{ display: 'inline-block', fontSize: '12px', color: 'sidebar.label', letterSpacing: '0.5px' }}>(10)</Typography></Typography>
@@ -146,8 +146,15 @@ const Projects = () => {
       },
       { field: 'pr_client_name', headerName: 'Client Name', width: width > 1800 ? 250 : width > 1440 ? 175 : 180, sortable: false },
       { field: 'pr_upwork_account_id', headerName: 'Upwork Account ID', width: width > 1800 ? 250 : width > 1440 ? 175 : 175, sortable: false },
-      { field: 'pr_contract_name', headerName: 'Contract Name', width: width > 1800 ? 250 : width > 1440 ? 225 : 225, sortable: false },
-      { field: 'pr_status', headerName: 'Status', width: width > 1800 ? 75 : width > 1440 ? 75 : 75, sortable: false, hide: true },
+      { field: 'pr_contract_name', headerName: 'Contract Name', width: width > 1800 ? 300 : width > 1440 ? 225 : 225, sortable: false },
+      {
+         field: 'pr_status', headerName: 'Status', width: width > 1800 ? 100 : width > 1440 ? 100 : 100, sortable: false, hide: false,
+         renderCell: (params) => {
+            return (
+               <Chip label={params.value} size="small" sx={{ width: '50px', fontSize: '12px', borderRadius: '4px', color: 'common.white', backgroundColor: params.value === 'open' ? '#ffa726' : params.value === 'close' ? '#4db6ac' : '#ef5350' }} />
+            );
+         }
+      },
       {
          field: 'pr_actions', headerName: 'Actions', width: width > 1800 ? 150 : 150, sortable: false,
          renderCell: () => {
@@ -166,9 +173,9 @@ const Projects = () => {
 
    return (
       <Container sx={{ maxWidth: { xs: 'initial' }, pt: { xs: '25px', lg: 0 }, px: 0 }}>
-         <Typography variant="h1" component="h1" sx={{ color: 'common.black', mb: 0, fontFamily: "'Hind', sans-serif", mb: 2 }}>Projects</Typography>
 
-         <Box sx={{ mb: 2, display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end', justifyContent: 'space-between' }}>
+         <Box sx={{ mb: 2, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
+            <Typography variant="h1" component="h1" sx={{ color: 'common.black', mb: 0, fontFamily: "'Hind', sans-serif" }}>Projects</Typography>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end' }}>
 
                <Box sx={{ display: 'inline-flex', mr: 1 }}>
@@ -176,21 +183,25 @@ const Projects = () => {
                      label="Search projects"
                      id="outlined-start-adornment"
                      size="small"
+                     sx={{ '& .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(0,0,0,0.12)' } }}
                      InputProps={{
                         endAdornment: <SearchIcon sx={{ fontSize: '18px' }} />,
                      }}
                   />
                </Box>
 
-               <Box sx={{ '& .MuiTextField-root': { mr: 1, width: '15ch' } }}>
-                  <TextField label="Status" select defaultValue="" size="small">
+               <Box sx={{
+                  '& .MuiTextField-root': { mr: 1, width: '15ch' },
+                  '& .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(0,0,0,0.12)' }
+               }}>
+                  < TextField label="Status" select defaultValue="" size="small" >
                      <MenuItem value='open'>Open</MenuItem>
                      <MenuItem value='close'>Close</MenuItem>
                      <MenuItem value='hold'>Hold</MenuItem>
                   </TextField>
                </Box>
 
-               <Box sx={{ '& .MuiTextField-root': { mr: 1, width: '15ch' } }}>
+               <Box sx={{ '& .MuiTextField-root': { mr: 1, width: '15ch' }, '& .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(0,0,0,0.12)' } }}>
                   <TextField label="Category" select size="small" defaultValue="">
                      <MenuItem value='react-js'>React JS</MenuItem>
                      <MenuItem value='laraval'>Laraval</MenuItem>
@@ -198,21 +209,21 @@ const Projects = () => {
                   </TextField>
                </Box>
 
-               <Box sx={{ '& .MuiTextField-root': { m: 0, width: '15ch' } }}>
+               <Box sx={{ '& .MuiTextField-root': { mr: 1, width: '15ch' }, '& .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(0,0,0,0.12)' } }}>
                   <TextField label="Clients" select size="small" defaultValue="">
                      <MenuItem value='dallas'>Mr. Dallas</MenuItem>
                      <MenuItem value='melissa'>Mr. Mellisa</MenuItem>
                   </TextField>
                </Box>
-            </Box>
+               <Box>
+                  <Button variant="contained" startIcon={<AddIcon sx={{ fontSize: "16px", m: 0 }} />} color="active" onClick={() => setIsDrawerOpen(true)} sx={{ height: '37px' }}><Typography variant="body1" component="span" sx={{ color: 'common.white', mt: '2px', textTransform: 'capitalize' }}>Project</Typography></Button>
+               </Box>
+            </Box >
 
-            <Button variant="contained" startIcon={<AddIcon sx={{ fontSize: "16px" }} />} color="active" onClick={() => setIsDrawerOpen(true)}>
-               Projects
-            </Button>
-         </Box>
+         </Box >
 
          <Grid container spacing={2} sx={{ height: 'calc(100vh - 225px)', mt: 0, ml: 0, width: '100%' }}>
-            <DataGrid rowHeight={50} rows={rows} columns={columns} disableColumnFilter checkboxSelection disableColumnMenu pageSize={15} rowsPerPageOptions={[15]}
+            <DataGrid rowHeight={50} rows={rows} columns={columns} disableColumnFilter checkboxSelection disableColumnMenu pageSize={10} rowsPerPageOptions={[10]}
                components={{
                   BaseCheckbox: RedesignCheckbox,
                }}
@@ -223,7 +234,7 @@ const Projects = () => {
          <Drawer variant="temporary" anchor="right" open={isDrawerOpen} onClose={() => setIsDrawerOpen(false)}>
             <NewProject />
          </Drawer>
-      </Container>
+      </Container >
    )
 }
 

@@ -3,22 +3,22 @@ import { Drawer, Box, Typography, List, ListItem, ListItemButton, ListItemIcon, 
 import { NavLink } from 'react-router-dom';
 
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize';
-import PeopleIcon from '@mui/icons-material/People';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import SettingsIcon from '@mui/icons-material/Settings';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
+import EditIcon from '@mui/icons-material/Edit';
+import PeopleIcon from '@mui/icons-material/People';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import FolderCopyIcon from '@mui/icons-material/FolderCopy';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import PasswordIcon from '@mui/icons-material/Password';
-import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import PendingActionsIcon from '@mui/icons-material/PendingActions';
 import HelpCenterIcon from '@mui/icons-material/HelpCenter';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
-import EditIcon from '@mui/icons-material/Edit';
 
-// import Logo from '../../assets/images/logo.svg';
+import Logo from '../../assets/images/logo.svg';
+
 import Owner from '../../assets/images/owner.png';
-
 import Collapse from '@mui/material/Collapse';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
@@ -41,7 +41,7 @@ const Sidebar = () => {
          <Drawer hideBackdrop variant="permanent" anchor="left" open={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} sx={{ display: { xs: "none", lg: "flex" } }}>
             <Box px={2} sx={{ width: "225px", maxWidth: "100%", minWidth: "225px", flex: 1, boxSizing: "border-box" }} role="presentation" display="flex" flexWrap="wrap" flexDirection="column">
                {/* Sidebar Logo */}
-               {/* <Avatar alt="Remy Sharp" src={Logo} variant="rounded" sx={{ pt: 2, pb: 1, width: "100%", display: "flex", height: 'auto', position: 'sticky', top: 0, zIndex: 9, background: 'white' }} /> */}
+               <Avatar alt="Remy Sharp" src={Logo} variant="rounded" sx={{ pt: 2, pb: 1, width: "100%", display: "flex", height: 'auto', position: 'sticky', top: 0, zIndex: 9, background: 'white' }} />
 
                {/* Analytics */}
                <List className="sidebar-menus" component="nav" sx={{ pt: 0, pb: 2, width: '100%', flex: 1 }}>
@@ -70,7 +70,7 @@ const Sidebar = () => {
                   </ListItem>
 
                   {/* Project Management */}
-                  {/* <ListItem disablePadding>
+                  <ListItem disablePadding>
                      <Typography variant="h6" component="div" sx={{ px: 2, pb: 2, pt: 5, width: "100%" }}>
                         <Typography variant="h6" component="div" sx={{ textTransform: "uppercase", fontSize: "10px", color: "sidebar.label", letterSpacing: 1 }}>Project Management</Typography>
                      </Typography>
@@ -79,7 +79,7 @@ const Sidebar = () => {
                      <NavLink to='/projects' onClick={() => handleListItemClick(7)} className={`${selectedIndex === 7 ? 'Mui-selected sidebar-links' : 'sidebar-links'} `}>
                         <ListItemIcon sx={{ minWidth: "30px" }}>
                            <Tooltip title="" placement="right" arrow>
-                              <FolderCopyIcon fontSize="small" sx={{ color: selectedIndex === 7 ? 'primary.dark' : 'sidebar.iconText' }} />
+                              <FolderCopyIcon sx={{ fontSize: '18px', color: selectedIndex === 7 ? 'primary.dark' : 'sidebar.iconText' }} />
                            </Tooltip>
                         </ListItemIcon>
                         <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 7 ? 'primary.dark' : 'sidebar.iconText' }}>Projects <Badge badgeContent={100} max={99} sx={{ ml: 3 }}></Badge></Typography>} sx={{ pt: "2px", m: 0 }} />
@@ -114,10 +114,10 @@ const Sidebar = () => {
                         </ListItemIcon>
                         <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 10 ? 'primary.dark' : 'sidebar.iconText' }}>Credentials</Typography>} sx={{ pt: "2px", m: 0 }} />
                      </ListItemButton>
-                  </ListItem> */}
+                  </ListItem>
 
                   {/* HR Management */}
-                  {/* <ListItem disablePadding>
+                  <ListItem disablePadding>
                      <Typography variant="h6" component="div" sx={{ px: 2, pb: 2, pt: 5, width: "100%" }}>
                         <Typography variant="h6" component="div" sx={{ textTransform: "uppercase", fontSize: "10px", color: "sidebar.label", letterSpacing: 1 }}>HR Management</Typography>
                      </Typography>
@@ -151,11 +151,11 @@ const Sidebar = () => {
                         </ListItemIcon>
                         <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 13 ? 'primary.dark' : 'sidebar.iconText' }}>Employees</Typography>} sx={{ pt: "2px", m: 0 }} />
                      </ListItemButton>
-                  </ListItem> */}
+                  </ListItem>
 
 
                   {/* Marketing */}
-                  {/* <ListItem disablePadding>
+                  <ListItem disablePadding>
                      <Typography variant="h6" component="div" sx={{ px: 2, pb: 2, pt: 5, width: "100%" }}>
                         <Typography variant="h6" component="div" sx={{ textTransform: "uppercase", fontSize: "10px", color: "sidebar.label", letterSpacing: 1 }}>Marketing</Typography>
                      </Typography>
@@ -169,7 +169,7 @@ const Sidebar = () => {
                         </ListItemIcon>
                         <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 14 ? 'primary.dark' : 'sidebar.iconText' }}>Sales</Typography>} sx={{ pt: "2px", m: 0 }} />
                      </ListItemButton>
-                  </ListItem> */}
+                  </ListItem>
                </List>
 
                <List component="nav" sx={{ pt: 2, pb: "5px", marginTop: 'auto', width: "calc(100% + 32px)", marginLeft: "-16px", position: 'sticky', bottom: 0, zIndex: 9, background: 'white', borderTop: '1px solid rgba(0, 0, 0, 0.12)' }}>
@@ -218,7 +218,7 @@ const Sidebar = () => {
                         </ListItemIcon>
                         <ListItemText
                            primary={<Typography component="div" sx={{ color: 'sidebar.iconText' }} >Logout</Typography>}
-                           secondary={<Typography component="div" sx={{ color: 'sidebar.iconText' }}><Switch size="small" sx={{ color: 'red' }} color="primary" /></Typography>}
+                           // secondary={<Typography component="div" sx={{ color: 'sidebar.iconText' }}><Switch size="small" sx={{ color: 'red' }} color="primary" /></Typography>}
                            sx={{ pt: "2px", m: 0, display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between" }}
                         />
                      </ListItemButton>

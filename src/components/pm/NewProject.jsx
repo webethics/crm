@@ -3,6 +3,11 @@ import React from 'react';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 import DoDisturbIcon from '@mui/icons-material/DoDisturb';
 import PanToolIcon from '@mui/icons-material/PanTool';
+import FileUploadIcon from '@mui/icons-material/FileUpload';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
+import PhotoCamera from '@mui/icons-material/PhotoCamera';
+
 import { Formik, Form, Field, useField } from 'formik';
 import { Editor } from '@tinymce/tinymce-react';
 import * as Yup from 'yup';
@@ -34,7 +39,6 @@ const NewProject = () => {
    const onSubmit = (values) => {
       console.log(values)
    }
-
 
    const top100Films = [
       { label: 'The Shawshank Redemption', year: 1994 },
@@ -81,6 +85,11 @@ const NewProject = () => {
       { id: 9, name: 'Mr. Vishal Rajput' },
    ];
 
+   const project_status = [
+      { id: 1, label: 'Open' },
+      { id: 2, label: 'Close' },
+      { id: 3, label: 'Hold' },
+   ];
 
    const EditorField = (props) => {
       const { label, name, ...otherProps } = props;
@@ -112,7 +121,7 @@ const NewProject = () => {
                formik => {
                   return (
                      <Form style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row', justifyContent: 'space-between' }}>
-                        <Typography variant="h1" component="h1" sx={{ color: 'common.black', mb: 0, fontFamily: "'Hind', sans-serif", mb: 2 }}>Add New Projects</Typography>
+                        <Typography variant="h1" component="h1" sx={{ color: 'common.black', mb: 0, fontFamily: "'Hind', sans-serif", mb: 2 }}>Add New Project</Typography>
 
                         <Box sx={{ width: '100%' }}>
                            <Field name="project_name">
@@ -121,7 +130,7 @@ const NewProject = () => {
                                     return (
                                        <FormControl sx={{ mb: 2, width: '100%' }}>
                                           <FormLabel htmlFor={field.name} sx={{ mb: 0.5 }}>Project Title</FormLabel>
-                                          <TextField variant="outlined" size="small" fullWidth  {...field} id={field.name} />
+                                          <TextField variant="outlined" size="small" fullWidth  {...field} id={field.name} sx={{ '& .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(0, 0, 0, 0.12)' } }} />
                                        </FormControl>
                                     )
                                  }
@@ -136,7 +145,7 @@ const NewProject = () => {
                                     return (
                                        <FormControl sx={{ mb: 2, width: '100%' }}>
                                           <FormLabel htmlFor={field.name} sx={{ mb: 0.5 }}>Client</FormLabel>
-                                          <TextField select size="small" defaultValue="" fullWidth id={field.name}>
+                                          <TextField select size="small" defaultValue="" fullWidth id={field.name} sx={{ '& .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(0, 0, 0, 0.12)' } }}>
                                              <MenuItem value='dallas'>Mr. Dallas</MenuItem>
                                              <MenuItem value='melissa'>Mr. Mellisa</MenuItem>
                                           </TextField>
@@ -154,7 +163,7 @@ const NewProject = () => {
                                     return (
                                        <FormControl sx={{ mb: 2, width: '100%' }}>
                                           <FormLabel htmlFor={field.name} sx={{ mb: 0.5 }}>Contract</FormLabel>
-                                          <TextField select size="small" defaultValue="" fullWidth id={field.name}>
+                                          <TextField select size="small" defaultValue="" fullWidth id={field.name} sx={{ '& .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(0, 0, 0, 0.12)' } }}>
                                              <MenuItem value='dallas'>Education Website</MenuItem>
                                              <MenuItem value='melissa'>Ecommerce Websites</MenuItem>
                                              <MenuItem value='melissa'>React JS Application</MenuItem>
@@ -174,7 +183,7 @@ const NewProject = () => {
                                     return (
                                        <FormControl sx={{ mb: 2, width: '100%' }}>
                                           <FormLabel htmlFor={field.name} sx={{ mb: 0.5 }}>Upwork Account ID</FormLabel>
-                                          <TextField select size="small" defaultValue="" fullWidth id={field.name}>
+                                          <TextField select size="small" defaultValue="" fullWidth id={field.name} sx={{ '& .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(0, 0, 0, 0.12)' } }}>
                                              <MenuItem value='dallas'>Mr. Harsh Vardhan</MenuItem>
                                              <MenuItem value='melissa'>Mr. Kamal Kant</MenuItem>
                                              <MenuItem value='melissa'>Mr. Rajesh Sharma</MenuItem>
@@ -201,6 +210,7 @@ const NewProject = () => {
                                              options={assignTo}
                                              getOptionLabel={(option) => option.name}
                                              defaultValue={[assignTo[1], assignTo[2], assignTo[3]]}
+                                             sx={{ '& .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(0, 0, 0, 0.12)' } }}
                                              renderInput={(params) => <TextField {...params} size="small" fullWidth {...field} id={field.name} />}
                                           />
                                        </FormControl>
@@ -232,6 +242,7 @@ const NewProject = () => {
                                              options={top100Films}
                                              getOptionLabel={(option) => option.label}
                                              defaultValue={[top100Films[13], top100Films[12], top100Films[11]]}
+                                             sx={{ '& .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(0, 0, 0, 0.12)' } }}
                                              renderInput={(params) => <TextField {...params} size="small" fullWidth {...field} id={field.name} />}
                                           />
                                        </FormControl>
@@ -252,6 +263,7 @@ const NewProject = () => {
                                              multiple
                                              limitTags={2}
                                              options={top100Films}
+                                             sx={{ '& .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(0, 0, 0, 0.12)' } }}
                                              renderInput={(params) => <TextField {...params} size="small" fullWidth  {...field} id={field.name} />}
                                           />
                                        </FormControl>
@@ -267,32 +279,69 @@ const NewProject = () => {
                                  ({ field }) => {
                                     return (
                                        <FormControl sx={{ mb: 2, width: '100%' }}>
-                                          <FormLabel sx={{ mb: 0.5 }}>Status</FormLabel>
-                                          <RadioGroup
-                                             row
-                                             defaultValue="open"
-                                             name="project-status"
-                                             sx={{ justifyContent: 'space-between' }}
-                                             id={field.name}
-                                          >
-                                             <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', backgroundColor: 'sidebar.label', borderRadius: '3px', m: 0, width: '30%', position: 'relative', overflow: 'hidden', boxSizing: 'border-box', cursor: 'pointer' }}>
-                                                <FormControlLabel sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', flexDirection: 'column', m: 0, width: '100%' }} value="open" control={<Radio sx={{ position: 'absolute', left: 0, right: 0, borderRadius: 0, height: '100%', opacity: 0, zIndex: 5 }} size="small" />} label={<Button variant="outlined" sx={{ p: 0, border: 'none', flexDirection: 'column', color: '#62636a', textTransform: 'capitalize', minWidth: 0, wordBreak: 'break-all', lineHeight: 1, }} startIcon={<LockOpenIcon sx={{ color: '#62636a', mb: 1 }} />}>Open</Button>} />
-                                             </Box>
-                                             <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', backgroundColor: 'sidebar.label', borderRadius: '3px', m: 0, width: '30%', position: 'relative', overflow: 'hidden', boxSizing: 'border-box', cursor: 'pointer' }}>
-                                                <FormControlLabel sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', flexDirection: 'column', m: 0, width: '100%' }} value="close" control={<Radio sx={{ position: 'absolute', left: 0, right: 0, borderRadius: 0, height: '100%', opacity: 0, zIndex: 5 }} size="small" />} label={<Button variant="outlined" sx={{ p: 0, border: 'none', flexDirection: 'column', color: '#62636a', textTransform: 'capitalize', minWidth: 0, wordBreak: 'break-all', lineHeight: 1, }} startIcon={<DoDisturbIcon sx={{ color: '#62636a', mb: 1 }} />}>Close</Button>} />
-                                             </Box>
-                                             <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', backgroundColor: 'sidebar.label', borderRadius: '3px', m: 0, width: '30%', position: 'relative', overflow: 'hidden', boxSizing: 'border-box', cursor: 'pointer' }}>
-                                                <FormControlLabel sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', flexDirection: 'column', m: 0, width: '100%' }} value="hold" control={<Radio sx={{ position: 'absolute', left: 0, right: 0, borderRadius: 0, height: '100%', opacity: 0, zIndex: 5 }} size="small" />} label={<Button variant="outlined" sx={{ p: 0, border: 'none', flexDirection: 'column', color: '#62636a', textTransform: 'capitalize', minWidth: 0, wordBreak: 'break-all', lineHeight: 1, }} startIcon={<PanToolIcon sx={{ color: '#62636a', mb: 1 }} />}>Hold</Button>} />
-                                             </Box>
-                                          </RadioGroup>
+                                          <FormLabel htmlFor={field.name} sx={{ mb: 0.5 }}>Status</FormLabel>
+                                          <Autocomplete
+                                             options={project_status}
+                                             sx={{ '& .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(0, 0, 0, 0.12)' } }}
+                                             renderInput={(params) => <TextField {...params} size="small" fullWidth  {...field} id={field.name} />}
+                                          />
                                        </FormControl>
                                     );
                                  }
                               }
                            </Field>
                         </Box>
+
                         <Box sx={{ width: '100%' }}>
-                           {/* <button type="submit" disabled={!formik.isValid}>Submit</button> */}
+                           <LocalizationProvider dateAdapter={AdapterMoment}>
+                              <Field name="deadline">
+                                 {
+                                    ({ field, form }) => {
+                                       // console.log(field)
+                                       return (
+                                          <FormControl sx={{ mb: 2, width: '100%' }}>
+                                             <FormLabel sx={{ mb: 0.5 }}>Deadline</FormLabel>
+                                             <TextField
+                                                id={field.name}
+                                                type="date"
+                                                size="small"
+                                                {...field}
+                                                sx={{ '& .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(0, 0, 0, 0.12)' } }}
+                                                value={field.value ? field.value : '2017-05-24'}
+                                             // onChange={val => form.setFieldValue(field.name, val)}
+                                             />
+                                          </FormControl>
+                                       )
+                                    }
+                                 }
+                              </Field>
+                           </LocalizationProvider>
+                        </Box>
+
+                        <Box sx={{ width: '100%' }}>
+                           <LocalizationProvider dateAdapter={AdapterMoment}>
+                              <Field name="deadline">
+                                 {
+                                    ({ field, form }) => {
+                                       // console.log(field)
+                                       return (
+                                          <FormControl sx={{ mb: 2, width: '100%' }}>
+                                             <FormLabel sx={{ mb: 0.5 }}>Upload Attachments</FormLabel>
+                                             <Button variant="contained" component="label" sx={{ backgroundColor: "transparent", color: '#62636a', boxShadow: 'none', border: '1px solid rgba(0,0,0,0.12)', width: '100%', height: '100px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', textTransform: 'capitalize', fontWeight: '400', '&:hover': { backgroundColor: 'transparent', boxShadow: 'none' } }}>
+                                                <FileUploadIcon />
+                                                Upload Attachments
+                                                <input hidden accept="image/*" multiple type="file" />
+                                             </Button>
+                                          </FormControl>
+                                       )
+                                    }
+                                 }
+                              </Field>
+                           </LocalizationProvider>
+                        </Box>
+
+
+                        <Box sx={{ width: '100%' }}>
                            <Button variant="contained" color="active" fullWidth disabled={!formik.isValid} sx={{ shadow: 'none' }}>
                               Create a new project
                            </Button>

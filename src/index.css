@@ -30,9 +30,7 @@ body {
   width: 0px;
   height: 0px;  
 }
-.MuiList-root .MuiListItem-root .MuiButtonBase-root:not(.Mui-selected):hover {
-  /* background: transparent; */
-}
+
 .MuiList-root .MuiListItem-root .MuiButtonBase-root:hover .MuiListItemText-root span,
 .MuiList-root .MuiListItem-root .MuiButtonBase-root:hover .MuiSvgIcon-root {
   color:rgb(21, 121, 161);
@@ -50,8 +48,6 @@ body {
 .MuiSwitch-root .MuiButtonBase-root.Mui-checked ~ .MuiSwitch-track {background: rgb(21, 121, 161);}
 .MuiDrawer-root.dropdown-open .MuiPaper-root {overflow:visible;}
 
-
-/* .MuiTabs-root .MuiTabs-scroller .MuiTabs-flexContainer {justify-content: center;} */
 .MuiTabs-root .MuiTabs-scroller .MuiTab-root.Mui-selected {color:#ffffff;}
 .MuiTabs-root .MuiTabs-scroller .MuiTabs-indicator {background-color:#ffffff;}
 .MuiTabs-root .MuiTabs-scrollButtons {
@@ -81,6 +77,7 @@ body {
 .MuiDataGrid-columnHeaders {border-bottom: 1px solid rgba(0,0,0,0.12)!important;}
 .MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-row:hover,
 .MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-row.Mui-selected {background-color: rgba(171, 173,181,0.17)!important; color:#1579a1; cursor: pointer;}
+.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-columnHeaders .MuiDataGrid-columnHeadersInner > div {border-left: 2px solid transparent;}
 .MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-columnHeaders .MuiDataGrid-columnHeadersInner .MuiDataGrid-columnHeader:focus,
 .MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-columnHeaders .MuiDataGrid-columnHeadersInner .MuiDataGrid-columnHeader:focus-within,
 .MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-row .MuiDataGrid-cell:focus,
@@ -108,45 +105,8 @@ body {
     border-left: 2px solid #ef5350;
 }
 .spaceVertial {
-  margin-bottom: 8px;
+  margin-top: 8px;
 }
-#status label button .MuiButton-startIcon {margin: 0;}
-#status label button:hover {border: none; background:transparent;}
-#status .MuiFormControlLabel-label {
-  padding: 16px;
-  width: 100%;
-  text-align: center;
-  box-sizing: border-box;
-}
-#status .MuiFormControlLabel-label:hover {
-  background-color: #1579a1;
-  color:#ffffff;
-}
-#status .MuiFormControlLabel-label button {transition: none;}
-#status .MuiFormControlLabel-label:hover button svg,
-#status .MuiFormControlLabel-label:hover button {color:#ffffff;}
-#status label .MuiRadio-root.Mui-checked ~ span {
-  background-color: #1579a1;
-}
-#status label .MuiRadio-root.Mui-checked ~ span button svg,
-#status label .MuiRadio-root.Mui-checked ~ span button {color:#ffffff;}
-/* .MuiAutocomplete-popper {
-  z-index: 999999 !important;
-} */
-
-/* .MuiTextField-root input[type="text"] {
-  padding-top: 10.5px;
-  padding-bottom: 10.5px;
-}
-.MuiTextField-root label {top: -5px;}
-.MuiTextField-root label.Mui-focused {color: #000000; top:0; font-size: 18px; background-color: #ffffff; padding: 0 8px 0 0;  }
-.MuiTextField-root .MuiInputBase-root:hover fieldset {border-color: rgba(0,0,0,0.12);}
-.MuiTextField-root .MuiInputBase-root .MuiSelect-select {
-  padding-top:10.5px;
-  padding-bottom:10.5px;
-}
-.MuiTextField-root .MuiInputBase-root fieldset {border-color:rgba(0,0,0,0.12);} */
-
 .MuiAutocomplete-root .MuiInputBase-root .MuiButtonBase-root {
   height: 24px;
   font-size: 12px;
@@ -155,8 +115,12 @@ body {
 .MuiAutocomplete-root .MuiInputBase-root .MuiButtonBase-root .MuiChip-label {padding-left: 10px; padding-right: 2px;}
 .MuiAutocomplete-root .MuiInputBase-root .MuiButtonBase-root svg {margin-right: 2px; margin-left: 2px;}
 .tox-tinymce {
-  border: 1px solid rgba(0,0,0,0.23)!important;
+  border: 1px solid rgba(0,0,0,0.12)!important;
   border-radius: 4px!important;
 }
-.tox .tox-statusbar {border-top-color:  rgba(0,0,0,0.23)!important;}
-.tox:not(.tox-tinymce-inline) .tox-editor-header {box-shadow: none!important; border-bottom: 1px solid rgba(0,0,0,0.23)!important;}
+.tox .tox-statusbar {border-top-color:  rgba(0,0,0,0.12)!important;}
+.tox:not(.tox-tinymce-inline) .tox-editor-header {box-shadow: none!important; border-bottom: 1px solid rgba(0,0,0,0.12)!important;}
+
+.header-notifications-bar nav .MuiButtonBase-root ~ .MuiCollapse-root:after {display: none;}
+.header-notifications-bar nav .MuiButtonBase-root.active svg,
+.header-notifications-bar nav .MuiButtonBase-root.active div {color:#1579a1;}

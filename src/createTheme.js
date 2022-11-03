@@ -1,6 +1,7 @@
 import { createTheme } from '@mui/material';
 const theme = createTheme(
    {
+      // shadows: "none",
       breakpoints: {
          values: {
             xs: 0,
@@ -96,6 +97,11 @@ const theme = createTheme(
             A400: '#58d9ff',
             A700: '#3fd3ff',
          },
+         content: {
+            main: '#62636a',
+            light: '#818288',
+            dark: '#45454a'
+         }
       },
       components: {
          // Disable Ripple Effect
