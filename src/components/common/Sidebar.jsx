@@ -53,19 +53,17 @@ const Sidebar = () => {
                   <ListItem disablePadding>
                      <NavLink to='/' onClick={() => handleListItemClick(0)} className={`${selectedIndex === 0 ? 'Mui-selected sidebar-links' : 'sidebar-links'} `}>
                         <ListItemIcon sx={{ minWidth: "30px" }}>
-                           <DashboardCustomizeIcon fontSize="small" sx={{ color: selectedIndex === 0 ? 'primary.dark' : 'sidebar.iconText' }} />
+                           <DashboardCustomizeIcon sx={{ color: selectedIndex === 0 ? 'common.white' : 'common.black', fontSize: '18px' }} />
                         </ListItemIcon>
-                        <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 0 ? 'primary.dark' : 'sidebar.iconText' }}>Dashboard</Typography>} sx={{ pt: "2px", m: 0, display: 'block' }} />
+                        <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 0 ? 'common.white' : 'common.black' }}>Dashboard</Typography>} sx={{ pt: "2px", m: 0, display: 'block' }} />
                      </NavLink>
                   </ListItem>
                   <ListItem disablePadding>
                      <ListItemButton component="a" href="#team" sx={{ borderRadius: "3px" }} selected={selectedIndex === 1} onClick={() => handleListItemClick(1)}>
                         <ListItemIcon sx={{ minWidth: "30px" }}>
-                           <Tooltip title="" placement="right" arrow>
-                              <Diversity3Icon fontSize="small" sx={{ color: selectedIndex === 1 ? 'primary.dark' : 'sidebar.iconText' }} />
-                           </Tooltip>
+                           <Diversity3Icon sx={{ color: selectedIndex === 1 ? 'primary.dark' : 'common.black', fontSize: '18px' }} />
                         </ListItemIcon>
-                        <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 1 ? 'primary.dark' : 'sidebar.iconText' }}>Team</Typography>} sx={{ pt: "2px", m: 0, display: 'block' }} />
+                        <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 1 ? 'primary.dark' : 'common.black' }}>Team</Typography>} sx={{ pt: "2px", m: 0, display: 'block' }} />
                      </ListItemButton>
                   </ListItem>
 
@@ -75,44 +73,40 @@ const Sidebar = () => {
                         <Typography variant="h6" component="div" sx={{ textTransform: "uppercase", fontSize: "10px", color: "sidebar.label", letterSpacing: 1 }}>Project Management</Typography>
                      </Typography>
                   </ListItem>
+
+
                   <ListItem disablePadding>
                      <NavLink to='/projects' onClick={() => handleListItemClick(7)} className={`${selectedIndex === 7 ? 'Mui-selected sidebar-links' : 'sidebar-links'} `}>
                         <ListItemIcon sx={{ minWidth: "30px" }}>
-                           <Tooltip title="" placement="right" arrow>
-                              <FolderCopyIcon sx={{ fontSize: '18px', color: selectedIndex === 7 ? 'primary.dark' : 'sidebar.iconText' }} />
-                           </Tooltip>
+                           <FolderCopyIcon sx={{ fontSize: '18px', color: selectedIndex === 7 ? 'common.white' : 'common.black' }} />
                         </ListItemIcon>
-                        <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 7 ? 'primary.dark' : 'sidebar.iconText' }}>Projects <Badge badgeContent={100} max={99} sx={{ ml: 3 }}></Badge></Typography>} sx={{ pt: "2px", m: 0 }} />
+                        <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 7 ? 'common.white' : 'common.black' }}>Projects <Badge badgeContent={100} max={99} sx={{ ml: 3 }}></Badge></Typography>} sx={{ pt: "2px", m: 0 }} />
                      </NavLink>
                   </ListItem>
+
+
                   <ListItem disablePadding>
                      <ListItemButton component="a" href="#category" sx={{ borderRadius: "3px" }} selected={selectedIndex === 8} onClick={() => handleListItemClick(8)}>
                         <ListItemIcon sx={{ minWidth: "30px" }}>
-                           <Tooltip title="" placement="right" arrow>
-                              <AccountTreeIcon fontSize="small" sx={{ color: selectedIndex === 8 ? 'primary.dark' : 'sidebar.iconText' }} />
-                           </Tooltip>
+                           <AccountTreeIcon sx={{ color: selectedIndex === 8 ? 'primary.dark' : 'common.black', fontSize: '18px' }} />
                         </ListItemIcon>
-                        <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 8 ? 'primary.dark' : 'sidebar.iconText' }}>Category</Typography>} sx={{ pt: "2px", m: 0 }} />
+                        <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 8 ? 'primary.dark' : 'common.black' }}>Category</Typography>} sx={{ pt: "2px", m: 0 }} />
                      </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
-                     <ListItemButton component="a" href="#tasks" sx={{ borderRadius: "3px" }} selected={selectedIndex === 9} onClick={() => handleListItemClick(9)}>
+                     <NavLink to="/tasks" onClick={() => handleListItemClick(9)} className={`${selectedIndex === 9 ? 'Mui-selected sidebar-links' : 'sidebar-links'} `}>
                         <ListItemIcon sx={{ minWidth: "30px" }}>
-                           <Tooltip title="" placement="right" arrow>
-                              <AssignmentIcon fontSize="small" sx={{ color: selectedIndex === 9 ? 'primary.dark' : 'sidebar.iconText' }} />
-                           </Tooltip>
+                           <AssignmentIcon sx={{ color: selectedIndex === 9 ? 'common.white' : 'common.black', fontSize: '18px' }} />
                         </ListItemIcon>
-                        <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 9 ? 'primary.dark' : 'sidebar.iconText' }}>Tasks</Typography>} sx={{ pt: "2px", m: 0 }} />
-                     </ListItemButton>
+                        <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 9 ? 'common.white' : 'common.black' }}>Tasks</Typography>} sx={{ pt: "2px", m: 0 }} />
+                     </NavLink>
                   </ListItem>
                   <ListItem disablePadding>
                      <ListItemButton component="a" href="#credentials" sx={{ borderRadius: "3px" }} selected={selectedIndex === 10} onClick={() => handleListItemClick(10)}>
                         <ListItemIcon sx={{ minWidth: "30px" }}>
-                           <Tooltip title="" placement="right" arrow>
-                              <PasswordIcon fontSize="small" sx={{ color: selectedIndex === 10 ? 'primary.dark' : 'sidebar.iconText' }} />
-                           </Tooltip>
+                           <PasswordIcon sx={{ color: selectedIndex === 10 ? 'primary.dark' : 'common.black', fontSize: '18px' }} />
                         </ListItemIcon>
-                        <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 10 ? 'primary.dark' : 'sidebar.iconText' }}>Credentials</Typography>} sx={{ pt: "2px", m: 0 }} />
+                        <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 10 ? 'primary.dark' : 'common.black' }}>Credentials</Typography>} sx={{ pt: "2px", m: 0 }} />
                      </ListItemButton>
                   </ListItem>
 
@@ -125,31 +119,25 @@ const Sidebar = () => {
                   <ListItem disablePadding>
                      <ListItemButton component="a" href="#interviews" sx={{ borderRadius: "3px" }} selected={selectedIndex === 11} onClick={() => handleListItemClick(11)}>
                         <ListItemIcon sx={{ minWidth: "30px" }}>
-                           <Tooltip title="" placement="right" arrow>
-                              <PendingActionsIcon fontSize="small" sx={{ color: selectedIndex === 11 ? 'primary.dark' : 'sidebar.iconText' }} />
-                           </Tooltip>
+                           <PendingActionsIcon sx={{ color: selectedIndex === 11 ? 'primary.dark' : 'common.black', fontSize: '18px' }} />
                         </ListItemIcon>
-                        <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 11 ? 'primary.dark' : 'sidebar.iconText' }}>Interviews</Typography>} sx={{ pt: "2px", m: 0 }} />
+                        <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 11 ? 'primary.dark' : 'common.black' }}>Interviews</Typography>} sx={{ pt: "2px", m: 0 }} />
                      </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                      <ListItemButton component="a" href="#questions" sx={{ borderRadius: "3px" }} selected={selectedIndex === 12} onClick={() => handleListItemClick(12)}>
                         <ListItemIcon sx={{ minWidth: "30px" }}>
-                           <Tooltip title="" placement="right" arrow>
-                              <HelpCenterIcon fontSize="small" sx={{ color: selectedIndex === 12 ? 'primary.dark' : 'sidebar.iconText' }} />
-                           </Tooltip>
+                           <HelpCenterIcon sx={{ color: selectedIndex === 12 ? 'primary.dark' : 'common.black', fontSize: '18px' }} />
                         </ListItemIcon>
-                        <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 12 ? 'primary.dark' : 'sidebar.iconText' }}>Questions</Typography>} sx={{ pt: "2px", m: 0 }} />
+                        <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 12 ? 'primary.dark' : 'common.black' }}>Questions</Typography>} sx={{ pt: "2px", m: 0 }} />
                      </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                      <ListItemButton component="a" href="#employees" sx={{ borderRadius: "3px" }} selected={selectedIndex === 13} onClick={() => handleListItemClick(13)}>
                         <ListItemIcon sx={{ minWidth: "30px" }}>
-                           <Tooltip title="" placement="right" arrow>
-                              <PeopleIcon fontSize="small" sx={{ color: selectedIndex === 13 ? 'primary.dark' : 'sidebar.iconText' }} />
-                           </Tooltip>
+                           <PeopleIcon sx={{ color: selectedIndex === 13 ? 'primary.dark' : 'common.black', fontSize: '18px' }} />
                         </ListItemIcon>
-                        <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 13 ? 'primary.dark' : 'sidebar.iconText' }}>Employees</Typography>} sx={{ pt: "2px", m: 0 }} />
+                        <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 13 ? 'primary.dark' : 'common.black' }}>Employees</Typography>} sx={{ pt: "2px", m: 0 }} />
                      </ListItemButton>
                   </ListItem>
 
@@ -163,11 +151,9 @@ const Sidebar = () => {
                   <ListItem disablePadding>
                      <ListItemButton component="a" href="#sales" sx={{ borderRadius: "3px" }} selected={selectedIndex === 14} onClick={() => handleListItemClick(14)}>
                         <ListItemIcon sx={{ minWidth: "30px" }}>
-                           <Tooltip title="" placement="right" arrow>
-                              <ShowChartIcon fontSize="small" sx={{ color: selectedIndex === 14 ? 'primary.dark' : 'sidebar.iconText' }} />
-                           </Tooltip>
+                           <ShowChartIcon sx={{ color: selectedIndex === 14 ? 'primary.dark' : 'common.black', fontSize: '18px' }} />
                         </ListItemIcon>
-                        <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 14 ? 'primary.dark' : 'sidebar.iconText' }}>Sales</Typography>} sx={{ pt: "2px", m: 0 }} />
+                        <ListItemText primary={<Typography component="span" sx={{ color: selectedIndex === 14 ? 'primary.dark' : 'common.black' }}>Sales</Typography>} sx={{ pt: "2px", m: 0 }} />
                      </ListItemButton>
                   </ListItem>
                </List>
@@ -192,7 +178,7 @@ const Sidebar = () => {
                      <List component="div" disablePadding>
                         <ListItemButton component="a" href="#edit-profile" sx={{ borderRadius: "3px", pl: 4 }} onClick={() => handleListItemClick(17)}>
                            <ListItemIcon sx={{ minWidth: "30px" }}>
-                              <EditIcon fontSize="small" sx={{ color: 'common.white' }} />
+                              <EditIcon sx={{ color: 'common.white', fontSize: '18px' }} />
                            </ListItemIcon>
                            <ListItemText primary={<Typography component="span" sx={{ color: 'common.white' }}>Edit Profile</Typography>} sx={{ pt: "2px", m: 0, display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between" }} />
                         </ListItemButton>
@@ -202,25 +188,20 @@ const Sidebar = () => {
                   <ListItem disablePadding sx={{ marginTop: 'auto', px: 2 }}>
                      <ListItemButton component="a" href="#settings" sx={{ borderRadius: "3px", justifyContent: 'center', px: 2 }} onClick={() => handleListItemClick(15)}>
                         <ListItemIcon sx={{ minWidth: "30px" }}>
-                           <Tooltip title="" placement="right" arrow>
-                              <SettingsIcon fontSize="small" sx={{ color: 'sidebar.iconText' }} />
-                           </Tooltip>
+                           <SettingsIcon sx={{ color: 'common.black', fontSize: '18px' }} />
                         </ListItemIcon>
-                        <ListItemText primary={<Typography component="span" sx={{ color: 'sidebar.iconText' }}>Settings</Typography>} sx={{ pt: "2px", m: 0 }} />
+                        <ListItemText primary={<Typography component="span" sx={{ color: 'common.black' }}>Settings</Typography>} sx={{ pt: "2px", m: 0 }} />
                      </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding sx={{ marginTop: 'auto', px: 2 }}>
                      <ListItemButton component="a" href="#logout" sx={{ borderRadius: "3px", flexDirection: 'row' }} onClick={() => handleListItemClick(16)} className="">
                         <ListItemIcon sx={{ minWidth: "30px" }}>
-                           <Tooltip title="" placement="right" arrow>
-                              <ExitToAppIcon fontSize="small" sx={{ color: 'sidebar.iconText' }} />
-                           </Tooltip>
+                           <ExitToAppIcon sx={{ color: 'common.black', fontSize: '18px' }} />
                         </ListItemIcon>
                         <ListItemText
-                           primary={<Typography component="div" sx={{ color: 'sidebar.iconText' }} >Logout</Typography>}
+                           primary={<Typography component="div" sx={{ color: 'common.black' }} >Logout</Typography>}
                            // secondary={<Typography component="div" sx={{ color: 'sidebar.iconText' }}><Switch size="small" sx={{ color: 'red' }} color="primary" /></Typography>}
-                           sx={{ pt: "2px", m: 0, display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between" }}
-                        />
+                           sx={{ pt: "2px", m: 0, display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between" }} />
                      </ListItemButton>
                   </ListItem>
                </List>

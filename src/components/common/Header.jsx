@@ -6,17 +6,7 @@ import ShowChartIcon from '@mui/icons-material/ShowChart';
 import GirlIcon from '@mui/icons-material/Girl';
 import FolderIcon from '@mui/icons-material/Folder';
 import MessageIcon from '@mui/icons-material/Message';
-import InboxIcon from '@mui/icons-material/Inbox';
-import DraftsIcon from '@mui/icons-material/Drafts';
-import DeleteIcon from '@mui/icons-material/Delete';
-import Logo from '../../assets/images/logo.svg';
 import UserFace from '../../assets/images/user-face.jpg';
-
-import SendIcon from '@mui/icons-material/Send';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
-import StarBorder from '@mui/icons-material/StarBorder';
-
 
 const Header = () => {
    const defaultState = { sales: false, hr: false, pm: false, chat: false };
@@ -31,7 +21,7 @@ const Header = () => {
 
    return (
       <>
-         <Box sx={{ boxSizing: 'border-box', position: 'fixed', top: 0, backgroundColor: 'common.white', left: 0, right: 0, py: 2, pr: 2, pl: '240px', zIndex: 9, borderBottom: '1px solid rgba(0, 0, 0, 0.12)', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', }}>
+         <Box sx={{ boxSizing: 'border-box', position: 'fixed', top: 0, backgroundColor: 'common.white', left: 0, right: 0, py: 2, pr: 2, pl: { lg: '240px' }, zIndex: 9, borderBottom: '1px solid rgba(0, 0, 0, 0.12)', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', }}>
 
             {/* <Box sx={{ width: "200px", maxWidth: "100%", minWidth: "200px", boxSizing: "border-box" }}>
                <Avatar alt="Webethics Solutions Pvt. Ltd." src={Logo} variant="rounded" sx={{ width: "100%", height: 'auto', }} />

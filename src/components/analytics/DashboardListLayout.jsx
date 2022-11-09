@@ -10,7 +10,7 @@ const DashboardListLayout = ({ data }) => {
                {/* <Grid sx={{ display: 'flex', flexWrap: 'wrap' }}> */}
                <Grid item xs={12} sx={{ display: 'flex', position: 'relative', alignItems: { xs: 'center', lg: 'flex-start' }, flexDirection: { xs: 'row', xl: 'column' } }}>
 
-                  <Box component="div" sx={{ backgroundColor: item.gridBgColor ? (item.gridBgColor + '.' + 400) : 'primary.light', display: 'inline-flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', borderRadius: '6px', width: '34px', height: '34px', mr: { xs: 1, xl: 0 }, mb: { xs: 0, xl: 1 } }}>
+                  <Box component="div" sx={{ backgroundColor: item.gridBgColor ? (item.gridBgColor + '.' + 400) : 'primary.dark', display: 'inline-flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', borderRadius: '6px', width: '34px', height: '34px', mr: { xs: 1, xl: 0 }, mb: { xs: 0, xl: 1 } }}>
                      {item.icon}
                   </Box>
 

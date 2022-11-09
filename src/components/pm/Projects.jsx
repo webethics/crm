@@ -15,14 +15,14 @@ import useViewport from '../../utils/useViewport';
 import NewProject from './NewProject';
 
 const ActionIcons = () => {
-   const handleEditClick = () => { };
+   const handleEditClick = (id) => { console.log(`The id of event is ${id}`) };
    return (
       <>
          <FormControlLabel
             sx={{ ml: 0, mr: 1 }}
             control={
                <Tooltip title="View Details" arrow placement="top">
-                  <VisibilityIcon sx={{ color: 'sidebar.iconText', fontSize: '16px' }} onClick={handleEditClick(1)} />
+                  <VisibilityIcon sx={{ color: 'common.black', fontSize: '16px' }} onClick={handleEditClick(1)} />
                </Tooltip>
             }
          />
@@ -30,7 +30,7 @@ const ActionIcons = () => {
             sx={{ ml: 0, mr: 1 }}
             control={
                <Tooltip title="Edit Details" arrow placement="top">
-                  <CreateIcon sx={{ color: 'sidebar.iconText', fontSize: '16px' }} onClick={handleEditClick(1)} />
+                  <CreateIcon sx={{ color: 'common.black', fontSize: '16px' }} onClick={handleEditClick(2)} />
                </Tooltip>
             }
          />
@@ -38,7 +38,7 @@ const ActionIcons = () => {
             sx={{ ml: 0, mr: 1 }}
             control={
                <Tooltip title="Favorite" arrow placement="top">
-                  <FavoriteIcon sx={{ color: 'sidebar.iconText', fontSize: '16px' }} onClick={handleEditClick(2)} />
+                  <FavoriteIcon sx={{ color: 'common.black', fontSize: '16px' }} onClick={handleEditClick(3)} />
                </Tooltip>
             }
          />
@@ -46,7 +46,7 @@ const ActionIcons = () => {
             sx={{ ml: 0, mr: 1 }}
             control={
                <Tooltip title="Mr. Harsh Vardhan" arrow placement="top">
-                  <PersonIcon sx={{ color: 'sidebar.iconText', fontSize: '16px' }} onClick={handleEditClick(3)} />
+                  <PersonIcon sx={{ color: 'common.black', fontSize: '16px' }} onClick={handleEditClick(4)} />
                </Tooltip>
             }
          />
@@ -54,7 +54,7 @@ const ActionIcons = () => {
             sx={{ ml: 0, mr: 1 }}
             control={
                <Tooltip title="Chat" arrow placement="top">
-                  <ChatIcon sx={{ color: 'sidebar.iconText', fontSize: '16px' }} onClick={handleEditClick(4)} />
+                  <ChatIcon sx={{ color: 'common.black', fontSize: '16px' }} onClick={handleEditClick(5)} />
                </Tooltip>
             }
          />
@@ -62,7 +62,7 @@ const ActionIcons = () => {
             sx={{ ml: 0, mr: 1 }}
             control={
                <Tooltip title="Download Attachments" arrow placement="top">
-                  <DownloadIcon sx={{ color: 'sidebar.iconText', fontSize: '16px' }} onClick={handleEditClick(5)} />
+                  <DownloadIcon sx={{ color: 'common.black', fontSize: '16px' }} onClick={handleEditClick(6)} />
                </Tooltip>
             }
          />
@@ -70,7 +70,7 @@ const ActionIcons = () => {
             sx={{ ml: 0, mr: 1 }}
             control={
                <Tooltip title="Delete" arrow placement="top">
-                  <DeleteIcon sx={{ color: 'sidebar.iconText', fontSize: '16px' }} onClick={handleEditClick(6)} />
+                  <DeleteIcon sx={{ color: 'common.black', fontSize: '16px' }} onClick={handleEditClick(7)} />
                </Tooltip>
             }
          />
@@ -133,13 +133,16 @@ const RedesignCheckbox = styled(Checkbox)`
 const Projects = () => {
    const { width } = useViewport();
    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+   const handleStatus = (params) => {
+      console.log(params)
+   }
 
    const columns = [
       {
          field: 'pr_title', headerName: 'Project Title', width: width > 1800 ? 350 : width > 1440 ? 300 : 225, sortable: false, hideable: false,
          renderCell: (params) => (
             <Typography component="div" variant="" sx={{}}>
-               <Typography component="span" variant="body2" sx={{ display: 'block' }}> {params.value} <Typography component="span" variant="body2" sx={{ display: 'inline-block', fontSize: '12px', color: 'sidebar.label', letterSpacing: '0.5px' }}>(10)</Typography></Typography>
+               <Typography component="span" variant="body2" sx={{ display: 'block', color: 'primary.dark', fontWeight: '500' }}> {params.value} <Typography component="span" variant="body2" sx={{ display: 'inline-block', fontSize: '12px', color: 'sidebar.label', letterSpacing: '0.5px' }}>(10)</Typography></Typography>
                <Typography component="span" variant="body2" sx={{ display: 'block', fontSize: '12px', color: 'sidebar.label', letterSpacing: '0.5px' }}> 17/Oct/2022 - 17/Nov/2022</Typography>
             </Typography>
          ),
@@ -148,15 +151,29 @@ const Projects = () => {
       { field: 'pr_upwork_account_id', headerName: 'Upwork Account ID', width: width > 1800 ? 250 : width > 1440 ? 175 : 175, sortable: false },
       { field: 'pr_contract_name', headerName: 'Contract Name', width: width > 1800 ? 300 : width > 1440 ? 225 : 225, sortable: false },
       {
-         field: 'pr_status', headerName: 'Status', width: width > 1800 ? 100 : width > 1440 ? 100 : 100, sortable: false, hide: false,
+         field: 'pr_status', headerName: 'Status', width: width > 1800 ? 150 : width > 1440 ? 150 : 150, sortable: false, hide: false,
          renderCell: (params) => {
             return (
-               <Chip label={params.value} size="small" sx={{ width: '50px', fontSize: '12px', borderRadius: '4px', color: 'common.white', backgroundColor: params.value === 'open' ? '#ffa726' : params.value === 'close' ? '#4db6ac' : '#ef5350' }} />
+               <>
+                  {/* <Chip label={params.value} size="small" sx={{ width: '50px', fontSize: '12px', borderRadius: '4px', color: 'common.white', backgroundColor: params.value === 'open' ? '#ffa726' : params.value === 'close' ? '#4db6ac' : '#ef5350' }} /> */}
+                  <Box sx={{
+                     '& .MuiTextField-root': { mr: 1, width: '10ch', borderRadius: '4px', color: 'common.white', backgroundColor: params.value === 'open' ? '#ffa726' : params.value === 'close' ? '#4db6ac' : '#ef5350' },
+                     '& .MuiSelect-select': { color: 'common.white', fontSize: '12px' },
+                     '& fieldset': { border: 'none' },
+                     '& svg': { color: 'common.white' }
+                  }}>
+                     < TextField label="" select defaultValue="open" size="small" onChange={() => handleStatus(params)}>
+                        <MenuItem value='open'>Open</MenuItem>
+                        <MenuItem value='close'>Close</MenuItem>
+                        <MenuItem value='hold'>Hold</MenuItem>
+                     </TextField>
+                  </Box>
+               </>
             );
          }
       },
       {
-         field: 'pr_actions', headerName: 'Actions', width: width > 1800 ? 150 : 150, sortable: false,
+         field: 'pr_actions', headerName: 'Actions', width: width > 1800 ? 180 : 180, sortable: false,
          renderCell: () => {
             return (
                <div
@@ -169,7 +186,6 @@ const Projects = () => {
          }
       },
    ];
-
 
    return (
       <Container sx={{ maxWidth: { xs: 'initial' }, pt: { xs: '25px', lg: 0 }, px: 0 }}>
@@ -223,7 +239,7 @@ const Projects = () => {
          </Box >
 
          <Grid container spacing={2} sx={{ height: 'calc(100vh - 225px)', mt: 0, ml: 0, width: '100%' }}>
-            <DataGrid rowHeight={50} rows={rows} columns={columns} disableColumnFilter checkboxSelection disableColumnMenu pageSize={10} rowsPerPageOptions={[10]}
+            <DataGrid rowHeight={50} rows={rows} columns={columns} disableSelectionOnClick disableColumnFilter checkboxSelection disableColumnMenu pageSize={10} rowsPerPageOptions={[10]}
                components={{
                   BaseCheckbox: RedesignCheckbox,
                }}

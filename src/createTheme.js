@@ -17,39 +17,39 @@ const theme = createTheme(
       typography: {
          fontFamily: "'Hind', sans-serif",
          h1: {
-            // fontFamily: "'Roboto', sans-serif",
             fontSize: '18px',
             fontWeight: '500',
             marginBottom: '20px',
          },
          h2: {
-            // fontFamily: "'Roboto', sans-serif",
             fontSize: '14px',
             fontWeight: '500',
             marginBottom: '10px',
          },
-         // h3: {
-         //    fontFamily: "'Roboto', sans-serif"
-         // },
-         // h4: {
-         //    fontFamily: "'Roboto', sans-serif"
-         // },
-         // h5: {
-         //    fontFamily: "'Roboto', sans-serif"
-         // },
-         // h6: {
-         //    fontFamily: "'Roboto', sans-serif"
-         // },
          body1: {
             fontSize: '14px',
             color: '#62636a'
          }
       },
       palette: {
+         // primary: {
+         //    main: '#1eade6',
+         //    dark: '#1579a1',
+         //    light: '#c9ebf9'
+         // },
+         // primary: {
+         //    main: '#1579a1',
+         //    light: '#57a8d2',
+         //    dark: '#004d72',
+         // },
          primary: {
             main: '#1eade6',
-            dark: '#1579a1',
-            light: '#c9ebf9'
+            light: '#6bdfff',
+            dark: '#007eb4',
+         },
+         common: {
+            black: '#313636',
+            white: '#ffffff'
          },
          active: {
             light: '#757ce8',
@@ -58,8 +58,11 @@ const theme = createTheme(
             contrastText: '#fff',
          },
          sidebar: {
-            label: '#acaeb4',
-            iconText: '#7a7e9e',
+            // label: '#acaeb4',
+            label: '#999999',
+            // iconText: '#7a7e9e',
+            iconText: '#000000',
+            icon: '#000000'
          },
          red: {
             300: '#e57373',
@@ -101,7 +104,12 @@ const theme = createTheme(
             main: '#62636a',
             light: '#818288',
             dark: '#45454a'
-         }
+         },
+         // content: {
+         //    main: '',
+         //    light: '',
+         //    dark: '',
+         // }
       },
       components: {
          // Disable Ripple Effect

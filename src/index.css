@@ -13,9 +13,10 @@ body {
   border-radius: 3px;
   text-decoration:none;
 }
+/* Sidebar Active Item */
 .sidebar-links.Mui-selected,
 .MuiList-root .MuiListItem-root .MuiButtonBase-root.Mui-selected {
-  background: rgba(75, 189, 235, 0.25);
+  background: #007eb4;
 }
 .MuiList-root .MuiCollapse-root:after {
   content: "";
@@ -33,7 +34,7 @@ body {
 
 .MuiList-root .MuiListItem-root .MuiButtonBase-root:hover .MuiListItemText-root span,
 .MuiList-root .MuiListItem-root .MuiButtonBase-root:hover .MuiSvgIcon-root {
-  color:rgb(21, 121, 161);
+  color:#1eade6;
 }
 /* Background color for all the badge */
 .MuiBadge-root .MuiBadge-badge {
@@ -64,7 +65,7 @@ body {
 .MuiDataGrid-selectedRowCount,
 .MuiTablePagination-displayedRows,
 .MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-row {
-  color:#7a7e9e;
+  color:#313636;
   text-transform: capitalize;
 }
 .MuiDataGrid-root,

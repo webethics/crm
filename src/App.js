@@ -48,11 +48,10 @@ function App() {
           </Route>
 
           {/* PM */}
-          <Route path="projects" element={<Projects />}>
-            <Route path="category" element={<Category />} />
-            <Route path="tasks" element={<Tasks />} />
-            <Route path="credentials" element={<Credentials />} />
-          </Route>
+          <Route path="projects" element={<Projects />} />
+          <Route path="category" element={<Category />} />
+          <Route path="tasks" element={<Tasks />} />
+          <Route path="credentials" element={<Credentials />} />
 
           {/* User */}
           <Route path="user" element={<Profile />} />
